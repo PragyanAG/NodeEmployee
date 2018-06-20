@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+	
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	
+	<link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="/stylesheets/animate.min.css" rel="stylesheet"/>
+    <link href="/stylesheets/main.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image/image/sidebar-5.jpg>
+		      <div class="sidebar-wrapper">
+		
+                    <div class="logo">
+                        <a target="_blank" href="http://www.safe-lanes.com" class="simple-text">
+                            <img src="/images/SafeLanes_logo.png" class="imgclass" />
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li>
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+					    
+						
+						<li>
+                            <a href="/employees">
+                               <p>Employee Master</p>
+                            </a>
+                        </li>
+						
+                        <li>
+                            <a href="/vdranalysiss">
+                                <p>VDR Job Tracker</p>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="/jobassignments">
+                               <p>Vessel Job Tracker</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/clients">
+                               <p>Client Details</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/observationanalysis">
+                               <p>Observation Analysis</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+<div class="main-panel" data-color="orange" >
+        <nav class="navbar navbar-default navbar-fixed" >
+            <div class="container-fluid">
+	    <!--added new -->
+	    	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+	   <!--added new -->
+                <div  align="right">
+                   <a href="">Account</a>
+                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                   <a href="#">Log out</a>
+                </div>
+            </div>
+			
+		</nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                            <h5><a href="/jobassignments">Vessel Job Tracker</a></h5>
+                            </div>
+                        <div class="content">
+						
+						<div class="row">
+                                  <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Company *</label>
+										   <select name="company" class="form-control" id="company" disabled>
+												  <option selected value='<%= jobassignment.company_id %>'><%= jobassignment.company %></option>
+                                                 
+                                            </select>												  
+                                      </div>
+                                   </div>
+                                    <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Vessel *</label>
+										   <input type="text" class="form-control" placeholder="Vessel" disabled value="<%= jobassignment.vessel %>">
+										 </div>
+                                   </div>
+								   </div>
+							
+							      <div class="row">
+                                  <div class="col-md-4">
+                                      <div class="form-group">
+                                          <label>Job Category</label>
+										   <select name="jobcategory" class="form-control" id="jobcategory" disabled>
+												  <option selected value='<%= jobassignment.job_catid %>'><%= jobassignment.jobcategory %></option>
+                                                 
+                                            </select>											
+                                      </div>
+                                   </div>
+                                    <div class="col-md-4">
+                                      <div class="form-group">
+                                            <label>Job Type</label>
+										   <select name="jobtype" class="form-control" id="jobtype" disabled>
+												  <option selected value='<%= jobassignment.job_typeid %>'><%= jobassignment.jobtype %></option>
+                                                 
+                                            </select>
+                                            
+										 </div>
+                                   </div>
+								   </div>
+							
+							     <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Auditor </label>
+                                                 <input type="text" class="form-control"  disabled value="<%= jobassignment.employeename %>">
+									   </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Vessel Schedule *</label>
+                                                 
+                                          <div class="form-group has-feedback" >
+                                              <input type="radio" id="contactChoice1"
+                                               name="contact" value="planned" disabled>
+                                              <label for="contactChoice1">Planned</label>
+
+                                              <input type="radio" id="contactChoice2"
+                                               name="contact" value="onboard" disabled>
+                                              <label for="contactChoice2">On Board</label>
+
+                                              <input type="radio" id="contactChoice3"
+                                               name="contact" value="onhold" disabled>
+                                              <label for="contactChoice3">On Hold</label>
+                                          </div>
+
+									   </div>
+                                   </div>
+								   </div>
+								   <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Departure </label>
+                                               <input type="date" class="form-control" disabled name="departure" id="departure" value="<%= jobassignment.departure %>">
+                                      </div>
+                                   </div>
+								   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Arrival </label>
+                                               <input type="date" class="form-control" disabled name="arrival" id="arrival"  value="<%= jobassignment.arrival %>">
+                                      </div>
+                                   </div>
+                                 </div>
+								 
+							     <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Destination from </label>
+										   <input type="text" class="form-control"  disabled value="<%= jobassignment.destfrom %>">
+                                      </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Destination To </label>
+										   <input type="text" class="form-control"  disabled value="<%= jobassignment.destto %>">
+                                      </div>
+                                   </div>
+                                 </div>
+								 <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Nearest Airport Destination from </label>
+                                                <input type="text" class="form-control"  disabled value="<%= jobassignment.airdestfrom %>">
+									   </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Nearest Airport Destination To </label>
+                                               <input type="text" class="form-control"  disabled value="<%= jobassignment.airdestto %>">
+                                      </div>
+                                   </div>
+                                 </div>
+								 
+								  <div class="row">
+									<div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>On Board From Date</label>
+                                               <input type="date" class="form-control" name="bfromdt" id="bfromdt" disabled>
+                                      </div>
+                                   </div>
+								   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>On Board To Date</label>
+                                               <input type="date" class="form-control" name="btodt" id="btodt" disabled>
+                                      </div>
+                                   </div>
+								   </div>
+								 
+								 <div class="row">
+									
+								   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Report Completed</label>
+                                               <input type="date" class="form-control" name="rtcomp" id="rtcomp" disabled>
+                                      </div>
+                                   </div>
+								   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Report Delivered</label>
+                                               <input type="date" class="form-control" name="rtdeliver" id="rtdeliver" disabled>
+                                      </div>
+                                   </div>
+								   </div>
+								   
+								    <div class="row">
+									<div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Due Date</label>
+                                               <input type="date" class="form-control" name="dtdue" id="dtdue" disabled>
+                                      </div>
+                                   </div>
+								   <div class="col-md-4">
+						               <div class="form-group">
+                                           <label>Upload ETicket</label>
+                                           <input type="file" class="form-control-file" disabled name="etkt[]" multiple/>
+										</div>
+									</div>
+								   </div>
+								   
+								 <div class="row">
+								 <div class="col-md-4">
+						               <div class="form-group">
+								              						 
+							           </div>
+								  </div>
+								  <div class="col-md-4">
+						               <div class="form-group">
+											  <% for(var i=0; i < listofdoc.length; i++){ %>
+											  <% if(listofdoc[i].typeofdoc == "ETickets") {%>
+				                               <a href="<%= listofdoc[i].filepath %>" target ="_blank"><%= listofdoc[i].document %></a></br> 
+                                             <%}}%>				 
+							           </div>
+								  </div>
+							    </div>
+								   
+								 <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label>Remarks</label>
+                                                <textarea rows="3" class="form-control" name="remarks" id="remarks" disabled></textarea>
+                                            </div>
+                                        </div>
+                                 </div>
+								 
+								 
+								 
+								  <div class="row" >
+								    <div class="col-md-4">
+						               <div class="form-group">
+                                           <label>Upload SEQ</label>
+                                           <input type="file" class="form-control-file" disabled name="doc" id="doc"/>
+										</div>
+									</div>
+									<div class="col-md-4">
+						               <div class="form-group">
+                                           <label>Additional Documents</label>
+                                           <input type="file" class="form-control-file" disabled name="files[]" multiple/>
+										</div>
+									</div>
+						        </div>
+								
+								<div class="row">
+								 <div class="col-md-4">
+						               <div class="form-group">
+								              <% for(var i=0; i < listofdoc.length; i++){ %>
+											  <% if(listofdoc[i].typeofdoc == "SEQ") {%>
+				                                <a href="<%= listofdoc[i].filepath %>" target ="_blank"><%= listofdoc[i].document %></a></br> 
+                                             <%}}%>								 
+							           </div>
+								  </div>
+								  <div class="col-md-4">
+						               <div class="form-group">
+											  <% for(var i=0; i < listofdoc.length; i++){ %>
+											  <% if(listofdoc[i].typeofdoc == "Additional Documents") {%>
+				                               <a href="<%= listofdoc[i].filepath %>" target ="_blank"><%= listofdoc[i].document %></a></br> 
+                                             <%}}%>				 
+							           </div>
+								  </div>
+							    </div>
+								
+								
+						        <h3><a id="edit12" href="/jobassignments/edit/<%= jobassignment._id%>" class="btn btn-info btn-fill pull-right">EDIT</a></h3>
+                                <form action="/jobassignments/complete/<%= jobassignment._id%>" method="post">
+                                <button id="btncomplete" type="submit" class="btn btn-info btn-fill pull-right" onclick="return confirm('Are you sure want to complete job?')">COMPLETE JOB</button>
+							    <input id="btncancel" type="button" class="btn btn-info btn-fill pull-right" value ="Cancel jOB"/>	
+						       <div class="clearfix"></div>
+						</div>
+						   </form>
+                            </div>
+                       </div>
+                    </div>
+			    </div>
+         </body>
+</html>
+						
+	<script type="text/javascript">
+
+ 
+ jQuery( document ).ready(function( $ ) {
+  
+  
+    if('<%=jobassignment.vesselschedule%>' == 'completed'){
+ 
+       
+	  $('#edit12').addClass('disabled');
+	  $('#btncancel').addClass('disabled');
+	  $(':input[type="submit"]').prop('disabled', true);
+      }
+  
+  if('<%=jobassignment.vesselschedule%>' == 'cancelled'){
+ 
+      document.getElementById('btncancel').value="Active JOB";
+	  $('#edit12').addClass('disabled');
+	  $(':input[type="submit"]').prop('disabled', true);
+      }
+  
+     var dt1 = '<%= jobassignment.departure %>';
+	 d1 = new Date(dt1);
+	
+	 $('#departure').val($.datepicker.formatDate('yy-mm-dd', d1));
+	  
+	 var dt2 = '<%= jobassignment.arrival %>';
+	 d2 = new Date(dt2);
+	 $('#arrival').val($.datepicker.formatDate('yy-mm-dd', d2));
+	 
+	 var dt3 = '<%= jobassignment.bfromdt %>';
+	 d3 = new Date(dt3);
+	 $('#bfromdt').val($.datepicker.formatDate('yy-mm-dd', d3));
+	 
+	 var dt4 = '<%= jobassignment.btodt %>';
+	 d4 = new Date(dt4);
+	 $('#btodt').val($.datepicker.formatDate('yy-mm-dd', d4));
+	 
+	 var dt5 = '<%= jobassignment.rtcomp %>';
+	 d5 = new Date(dt5);
+	 $('#rtcomp').val($.datepicker.formatDate('yy-mm-dd', d5));
+	 
+	 var dt6 = '<%= jobassignment.rtdeliver %>';
+	 d6 = new Date(dt6);
+	 $('#rtdeliver').val($.datepicker.formatDate('yy-mm-dd', d6));
+	 
+	 var dt7 = '<%= jobassignment.dtdue %>';
+	 d7 = new Date(dt7);
+	 $('#dtdue').val($.datepicker.formatDate('yy-mm-dd', d7));
+	 
+	 $('#remarks').val('<%= jobassignment.remarks %>');
+  
+  if('<%=jobassignment.vesselschedule%>' != null )
+       {
+	   
+           if('<%=jobassignment.vesselschedule%>' == 'planned'){
+              document.getElementById('contactChoice1').checked=true;
+			 
+             }
+          else if('<%=jobassignment.vesselschedule%>' == 'onboard')
+           {
+             document.getElementById('contactChoice2').checked=true;
+		   }
+		   else if('<%=jobassignment.vesselschedule%>' == 'onhold')
+		   {
+		   document.getElementById('contactChoice3').checked=true;
+		   }
+       }
+});
+
+
+$("#btncancel").click(function (event) {
+		 var check = confirm('Are you sure want to do this?');
+			 if (check == true) {
+			 var itemid = '<%= jobassignment._id%>';
+			   $.ajax({
+				type: "POST",
+				url: "/jobassignments/cancel/" + itemid,
+				data: {},
+				processData: false,
+				contentType: false,
+				cache: false,
+				timeout: 600000,
+				success: function(){
+				         window.location.href = "/jobassignments";
+						 },
+				error: function (e) {
+
+					   console.log("ERROR : ", e);
+				}
+			});
+			 
+			 }
+			 else{
+			   return false;
+			 }
+		});
+
+
+</script>							
+<script src="/javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/chartist.min.js"></script>
+<script src="/javascripts/bootstrap-notify.js"></script>
+<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<script src="/javascripts/light-bootstrap-dashboard.js?v=1.4.0"></script>     						
+			
+			

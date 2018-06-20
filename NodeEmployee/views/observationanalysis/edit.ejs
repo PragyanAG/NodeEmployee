@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+	
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	
+	
+	<link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="/stylesheets/animate.min.css" rel="stylesheet"/>
+    <link href="/stylesheets/main.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image/image/sidebar-5.jpg>
+		      <div class="sidebar-wrapper">
+		
+                    <div class="logo">
+                       <a target="_blank" href="http://www.safe-lanes.com" class="simple-text">
+                            <img src="/images/SafeLanes_logo.png" class="imgclass" />
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li>
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+					  
+						
+						<li>
+                            <a href="/employees">
+                               <p>Employee Master</p>
+                            </a>
+                        </li>
+						
+                        <li>
+                            <a href="/vdranalysiss">
+                                <p>VDR Job Tracker</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/jobassignments">
+                               <p>Vessel Job Tracker</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/clients">
+                               <p>Client Details</p>
+                            </a>
+                        </li>
+						<li class="active">
+                            <a href="/observationanalysis">
+                               <p>Observation Analysis</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+<div class="main-panel" data-color="orange" >
+        <nav class="navbar navbar-default navbar-fixed" >
+            <div class="container-fluid">
+	    <!--added new -->
+	    	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+	   <!--added new -->
+                <div  align="right">
+                   <a href="">Account</a>
+                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                   <a href="#">Log out</a>
+                </div>
+            </div>
+			
+		</nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                              <h5><a href="/observationanalysis">Observation Analysis</a></h5>
+                              <h5>Edit Observation Analysis</h5>
+							 
+							</div>  
+							<div class="content">
+                            <form id="editobsanalysis" action="/observationanalysis/update/<%= observationanalysis._id%>" method="post">
+							
+							<div class="row">
+                                  
+                                    <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Job Category *</label>
+                                                  <select name="jobcategory" class="form-control" id="jobcategory">
+												  <option selected value='<%= observationanalysis.job_catid %>'><%= observationanalysis.jobcategory %></option>
+                                                  
+                                                   </select>
+                                      </div>
+                                   </div>
+                                
+								  <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Job Type *</label>
+                                                  <select name="jobtype" class="form-control" id="jobtype">
+												  <option selected value='<%= observationanalysis.job_typeid %>'><%= observationanalysis.jobtype %></option>
+												  </select>
+                                      </div>
+                                   </div>
+								   </div>
+								   <div class="row">
+                                    <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Vessel *</label>
+										   <select name="vessel" class="form-control" id="vessel">
+												  <option selected value='<%= observationanalysis.vessel_id %>'><%= observationanalysis.vessel %></option>
+                                                 
+                                            </select>
+										 </div>
+                                   </div>
+								   
+								   
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Company *</label>
+										   <select name="company" class="form-control" id="company">
+												  <option selected value='<%= observationanalysis.company_id %>'><%= observationanalysis.company %></option>
+                                                 
+                                            </select>												  
+                                      </div>
+                                   </div>
+								   </div>
+								   
+                                  <div class="row">
+								
+								<div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Review Date *</label>
+                                               <input type="date" class="form-control" placeholder="Review Date" name="reviewdate" id="reviewdate" value="<%= observationanalysis.reviewdate %>">
+                                      </div>
+                                   </div>
+								
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>No. Of Nationality</label>
+                                               <input type="text" class="form-control" placeholder="No. Of Nationality" id="nonationality" name="nonationality" value="<%= observationanalysis.nonationality %>">
+											   &nbsp;<span id="errmsg"></span>
+                                      </div>
+                                   </div>
+								   </div>
+								 
+								  
+								 
+								  <div class="row" >
+								 <div class="col-md-4" id="select-container">
+                                      
+									  </div>
+                                 </div>
+								 
+								 
+								  
+								 <div class="row">
+										<div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Country</label>
+                                                  <select name="country" class="form-control" id="country">
+												  
+												  <% if (observationanalysis.country !=''){%>
+												  <option selected value='<%= observationanalysis.country %>'><%= observationanalysis.country %></option>
+												  <%} else {%>
+												  <option value=''>Select Country</li>
+												  <% } %>
+												  <% for(var i=0; i < country.length; i++){ %>
+												      <% if(country[i] != observationanalysis.country){ %>
+												        <option value='<%= country[i] %>'><%= country[i] %></li>
+                                                   <% }} %>
+							                      </select>
+									   </div>
+                                   </div>
+								   <div class="col-md-4">
+									 <div class="form-group">
+                                           <label>City </label>
+                                                  <select name="city" class="form-control" id="city">
+								                   
+							                      </select>
+									   </div>
+                                   </div>	
+                                </div>
+								  
+							   
+                                <button type="submit" class="btn btn-info btn-fill pull-right">Update</button>
+							    <div class="clearfix"></div>
+                             </div>
+							
+                           </form>
+                            </div>
+                       </div>
+                    </div>
+			    </div>
+         </body>
+</html>
+
+						 
+<script type="text/javascript">
+
+	jQuery( document ).ready(function( $ ) {
+	
+	 $('#vessel option:not(:selected)').prop('disabled', true);
+	 $('#company option:not(:selected)').prop('disabled', true);
+	 $('#jobcategory option:not(:selected)').prop('disabled', true);
+	 $('#jobtype option:not(:selected)').prop('disabled', true);
+	
+	
+	 var dt1 = '<%= observationanalysis.reviewdate %>';
+	 d1 = new Date(dt1);
+	 $('#reviewdate').val($.datepicker.formatDate('yy-mm-dd', d1));
+	
+	$country = $('#country');
+    $city = $('#city');
+	
+	$country.change(function() {
+    
+    $city.html(''); // Clear existing options in second dropdown
+	
+	 
+     var country_name = document.getElementById("country").value;
+	if('<%= observationanalysis.country %>' != '' || country_name != ''){
+	 
+        $.ajax({
+          method: "GET",
+          url: "/observationanalysis/returncity",
+          data: { country_name: country_name },
+		  dataType: "json",
+        }).done(function( data ) {
+
+          var result = data;
+		  
+            $.each(result, function (data) {
+            var appenddata = "<option value = '" + result[data] + " '>" + result[data] + " </option>";
+            $('#city').html($('#city').html() + appenddata);
+             });
+            
+			
+			
+			if(country_name == '<%= observationanalysis.country %>')
+			{
+			$('#city').val('<%= observationanalysis.city %>').attr("selected", "selected");
+		    }
+			
+           
+      });
+	 }
+	 
+	 else
+	 {
+	   
+		
+	   $('#city').append($('<option>', {
+			value: '',
+			text: 'Select City'
+		}));
+		
+		
+	 }
+	
+    }).change();
+	
+	
+	 $("#nonationality").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#errmsg").html("Digits Only").show().fadeOut("slow");
+               return false;
+    }
+	
+	
+     });
+	 
+	 <% for (var j = 0 ; j < observationanalysis.nonationality ;j++){ %>
+	
+	var newDiv=document.createElement('div');
+    var html = '<select id ="nationality" name="nationality" class="form-control">', i ;
+    <%for(i = 0; i < nationality.objNat.length; i++) {%>
+        html += "<option value='<%= nationality.objNat[i] %>'><%= nationality.objNat[i] %></li>";
+		
+    <%}%>
+	html += "<option selected value='<%= observationanalysis.nationality[j] %>'><%= observationanalysis.nationality[j] %></option>"
+    html += '</select>';
+	
+    newDiv.innerHTML= html;
+	
+	newDiv.classList.add("form-group");
+    document.getElementById('select-container').appendChild(newDiv);
+     <%}%>
+	 
+	$('#nonationality').change(function () {
+    document.getElementById('select-container').innerHTML = "";
+	
+	for (var j = 0 ; j < $('#nonationality').val() ;j++){
+	
+	addSelect('select-container');
+	
+	}
+    });
+	
+	
+	 
+	function addSelect(divname) {
+	
+	
+    var newDiv=document.createElement('div');
+    var html = '<select id ="nationality" name="nationality" class="form-control">', i;
+    <%for(i = 0; i < nationality.objNat.length; i++) {%>
+        html += "<option value='<%= nationality.objNat[i] %>'><%= nationality.objNat[i] %></li>";
+    <%}%>
+    html += '</select>';
+	
+    newDiv.innerHTML= html;
+	newDiv.classList.add("form-group");
+    document.getElementById(divname).appendChild(newDiv);
+    }
+	
+    $('#editobsanalysis').bootstrapValidator({
+        container: '#messages',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            reviewdate: {
+                validators: {
+                    notEmpty: {
+                        message: ''
+                    }
+                }
+            }
+        }
+    });
+});
+   
+
+</script> 
+<script src="/javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/chartist.min.js"></script>
+<script src="/javascripts/bootstrap-notify.js"></script>
+<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<script src="/javascripts/light-bootstrap-dashboard.js?v=1.4.0"></script>    		

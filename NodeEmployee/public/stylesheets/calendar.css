@@ -1,0 +1,48 @@
+DIV.calendar {
+	BORDER-RIGHT: #7ebce2 1px solid; BORDER-TOP: #7ebce2 1px solid; FONT-SIZE: 11px; Z-INDEX: 1; LEFT: 0px; VISIBILITY: hidden; BORDER-LEFT: #7ebce2 1px solid; WIDTH: 290px; CURSOR: pointer; BORDER-BOTTOM: #7ebce2 1px solid; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; POSITION: absolute; TOP: 0px; HEIGHT: auto; BACKGROUND-COLOR: #f2f2f2
+}
+TABLE.calendar {
+	FONT-SIZE: 11px; WIDTH: 100%; BORDER-TOP-STYLE: none; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+TR.firstrow {
+	BACKGROUND-COLOR: #daeafb
+}
+TD.day {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; WIDTH: 14%; BORDER-TOP-STYLE: none; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none
+}
+TD.today {
+	BORDER-RIGHT: #000033 1px solid; BORDER-TOP: #000033 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 11px; BORDER-LEFT: #000033 1px solid; WIDTH: 14%; COLOR: #ff0000; BORDER-BOTTOM: #000033 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: center
+}
+TD.weekends {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; WIDTH: 14%; BORDER-TOP-STYLE: none; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: #daeafb; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none
+}
+TD.weekends_out {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray; BORDER-TOP-STYLE: none; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: #f2f2f2; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none
+}
+TD.day_out {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f2f2f2; TEXT-ALIGN: center
+}
+TD.day_c {
+	BORDER-RIGHT: #333333 1px solid; BORDER-TOP: #333333 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 11px; BORDER-LEFT: #333333 1px solid; WIDTH: 14%; COLOR: white; BORDER-BOTTOM: #333333 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: black; TEXT-ALIGN: center
+}
+TD.weekhidden {
+	DISPLAY: none
+}
+TD.week {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BORDER-LEFT: #999999 1px solid; WIDTH: 14%; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f2f2f2; TEXT-ALIGN: center
+}
+TD.weeksel {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BORDER-LEFT: #999999 1px solid; WIDTH: 14%; COLOR: #000099; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f2f2f2; TEXT-ALIGN: center
+}
+TD.wd {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; WIDTH: 14%; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f2f2f2; TEXT-ALIGN: center
+}
+TD.closew {
+	BORDER-RIGHT: #000033 1px; BORDER-TOP: #000033 1px; FONT-WEIGHT: bold; FONT-SIZE: 11px; BORDER-LEFT: #000033 1px; WIDTH: 14%; COLOR: #ffffff; BORDER-BOTTOM: #000033 1px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: black; TEXT-ALIGN: center; FONT-VARIANT: small-caps
+}
+TD.nav {
+	FONT-SIZE: 11px; WIDTH: 14%; BORDER-TOP-STYLE: none; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: #000099; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none
+}
+SELECT.nav {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; BORDER-TOP-STYLE: none; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left; BORDER-BOTTOM-STYLE: none
+}

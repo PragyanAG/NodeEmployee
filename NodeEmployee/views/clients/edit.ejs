@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+	
+	<link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="/stylesheets/animate.min.css" rel="stylesheet"/>
+    <link href="/stylesheets/main.css" rel="stylesheet" />
+	
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image/image/sidebar-5.jpg>
+		      <div class="sidebar-wrapper">
+		
+
+                    <div class="logo">
+                        <a target="_blank" href="http://www.safe-lanes.com" class="simple-text">
+                             <img src="/images/SafeLanes_logo.png" class="imgclass" />
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li>
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                      
+						
+						<li>
+                            <a href="/employees">
+                               <p>Employee Master</p>
+                            </a>
+                        </li>
+						
+                        <li>
+                            <a href="/vdranalysiss">
+                                <p>VDR Job Tracker</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/jobassignments">
+                               <p>Vessel Job Tracker</p>
+                            </a>
+                        </li>
+						<li class="active">
+                            <a href="/clients">
+                               <p>Client Details</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/observationanalysis">
+                               <p>Observation Analysis</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+		
+		<div class="main-panel" data-color="orange" >
+        <nav class="navbar navbar-default navbar-fixed" >
+            <div class="container-fluid">
+	    <!--added new -->
+	    	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+	   <!--added new -->
+                <div  align="right">
+                   <a href="">Account</a>
+                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                   <a href="#">Log out</a>
+                </div>
+            </div>
+			
+		</nav>
+          <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="header">
+                               <h5><a href="/clients">Client List</a></h5>
+                            </div>
+                           <div class="content">
+						     <form id="editclient" enctype="multipart/form-data" action="/clients/update/<%= client._id%>" method="post">
+							   <input id="id1" type="hidden" name="id1" value=""/>
+							   <input id="id2" type="hidden" name="id2" value=""/>
+							   <input id="id3" type="hidden" name="id3" value=""/>
+							   <div class="row">
+								
+								   
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Name Of Company *</label>
+                                                <input type="text" class="form-control" name="companyname" id="companyname" value="<%= client.companyname %>">
+                                      </div>
+                                   </div>
+										
+								   <div class="col-md-4">
+                                      <div class="form-group">
+                                          <label>Address </label>
+                                                <input type="text" class="form-control" placeholder="Address" name="address" id="address" value="<%= client.address %>">
+                                      </div>
+                                   </div>
+                                </div>
+							 
+							 <div class="row">
+								
+								   <div class="col-md-4">
+                                      <div class="form-group">
+                                          <label>Country *</label>
+                                                  <select name="country" class="form-control" id="country">
+												  <option selected value='<%= client.country %>'><%= client.country %></option>
+								                   <% for(var i=0; i < country.length; i++){ %>
+												      <% if(country[i] != client.country){ %>
+												        <option value='<%= country[i] %>'><%= country[i] %></li>
+                                                   <% }} %>
+							                      </select>
+                                      </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>City </label>
+                                                  <select name="city" class="form-control" id="city">
+								                  </select>
+									   </div>
+                                   </div>
+										
+                                </div>
+							 
+							 <div class="row">
+								
+								   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Postal Code </label>
+
+                                                <input type="text" class="form-control" placeholder="Postal Code" name="postalcode" id="postalcode" value="<%=client.postalcode %>">
+                                      </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                          <label>Website </label>
+                                                <input type="text" class="form-control" placeholder="Website" name="website" id="website" value="<%=client.website %>">
+                                      </div>
+                                   </div>
+										
+                                </div>
+								
+								<div class="row">
+								
+								   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Office No </label>
+
+                                                <input type="text" class="form-control" placeholder="Office No" name="officeno" id="officeno" value="<%=client.officeno[0] %>">
+                                      </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                          <label></label>
+                                                <h5><a id="offtag" href="#" onclick="office();return false;">Add Office No</a><h5>
+                                      </div>
+                                   </div>
+										
+                                </div>
+								
+								 <div class="row" >
+								 <div class="col-md-4" id="select-container">
+                                      
+									  </div>
+								
+                                 </div>
+								
+							   <div class="row">
+								    <div class="col-md-4">
+						               <div class="form-group">
+                                           <label>Upload Proposal/Contract</label>
+                                           <input type="file" class="form-control-file" name="files[]" multiple>
+									
+						               </div>
+								    </div>
+									</div>
+								
+								<div class="row" id="document">
+								  <div class="col-md-8">
+						               <div class="form-group">
+								             <% for(var i=0; i < listofdoc.length; i++){ %>
+								                <a href="<%= listofdoc[i].filepath %>" target ="_blank"><%= listofdoc[i].document %></a></br> 
+												
+                                             <%}%>								 
+							           </div>
+								  </div>
+							    </div>
+								
+								
+								
+								
+							 
+							 <button type="submit" class="btn btn-info btn-fill pull-right">Update</button>
+							 <div class="clearfix"></div>
+							   
+						    </form>
+                          </div>
+                       </div>
+                    </div>
+					
+         </body>
+</html>
+                              
+<script type="text/javascript">
+var jsonObj = [];
+
+jQuery( document ).ready(function( $ ) {
+
+   $('#editclient').bootstrapValidator({
+        container: '#messages',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+           companyname: {
+                validators: {
+                    notEmpty: {
+                        message: ''
+                    }
+                }
+            },
+			
+						
+			country: {
+                validators: {
+                    notEmpty: {
+                        message: ''
+                    }
+                }
+            }
+           
+        }
+    
+	
+    });
+     	
+});
+	var i =1 ;
+	
+	function office(){
+		i = $("#select-container > div").length + 1;
+		
+		document.getElementById("id3").value = i;
+		addSelect('select-container',i);
+		i++;
+		
+	}
+	
+	function addSelect(divname,i) {
+	var newDiv=document.createElement('div');
+	var element = document.createElement("input");
+	element.setAttribute("type", "text");
+    element.setAttribute("id","myfieldid"+i);
+    element.setAttribute("name","myfieldid"+i);
+	element.setAttribute("class", "form-control");
+	
+	   <% for(var i=0; i < phonecode.length; i++){ %>
+			if ('<%= client.country %>' ==  '<%= phonecode[i].name %>' && '<%= phonecode[i].dial_code %>' != '' ) {
+				element.setAttribute("value", '<%= phonecode[i].dial_code %>');
+				
+				
+			}
+	   <%}%> 
+	
+	
+	newDiv.appendChild(element);	
+	newDiv.classList.add("form-group");
+	var item = document.getElementById('select-container');
+	item.appendChild(newDiv);
+	makeInitialTextReadOnly(document.getElementById("myfieldid" +i),0);
+    }
+	
+	
+
+	$country = $('#country');
+    $city = $('#city');
+	
+	$country.change(function() {
+    
+    $city.html(''); // Clear existing options in second dropdown
+	
+	 
+     var country_name = document.getElementById("country").value;
+	 
+	 if(country_name != ''){
+	 
+        $.ajax({
+          method: "GET",
+          url: "/clients/returncity",
+          data: { country_name: country_name },
+		  dataType: "json",
+        }).done(function( data ) {
+
+          var result = data;
+		  
+            $.each(result, function (data) {
+            var appenddata = "<option value = '" + result[data] + " '>" + result[data] + " </option>";
+            $('#city').html($('#city').html() + appenddata);
+             });
+            sortSelect(document.getElementById("city"), 'text', 'asc');
+			
+			
+			if(country_name == '<%= client.country %>')
+			{
+			$('#city').val('<%= client.city %>').attr("selected", "selected");
+		    }
+			
+           
+			
+			
+			document.getElementById("officeno").disabled=false;
+			
+			if(	'<%= client.officeno %>' !='' && country_name == '<%= client.country %>')
+			 {
+			 
+				  
+				$('#officeno').val('' + '<%=client.officeno[0]%>');
+				<% for(var i=0; i < phonecode.length; i++){ %>
+					if ('<%= client.country %>' ==  '<%= phonecode[i].name %>' && '<%= phonecode[i].dial_code %>' != '' ) {
+						
+						makeInitialTextReadOnly(document.getElementById("officeno"),'<%= phonecode[i].dial_code %>'.length);
+					}
+				<%}%> 
+			}
+				<% for (var j = 1 ; j < client.officeno.length ;j++){ %>
+	               
+					var newDiv = document.createElement('div');
+					var element = document.createElement("input");
+					element.setAttribute("type", "text");
+					element.setAttribute("value", "<%= client.officeno[j] %>");
+					element.setAttribute("class", "form-control");
+					element.setAttribute("id","myfieldid"+<%=j%>);
+					element.setAttribute("name","myfieldid"+<%=j%>);
+					newDiv.appendChild(element);
+					newDiv.classList.add("form-group");
+					var item = document.getElementById('select-container');
+	                item.appendChild(newDiv);
+					<% for(var i=0; i < phonecode.length; i++){ %>
+						if ('<%= client.country %>' ==  '<%= phonecode[i].name %>' && '<%= phonecode[i].dial_code %>' != '' ) {
+							makeInitialTextReadOnly(document.getElementById("myfieldid"+i),'<%= phonecode[i].dial_code %>'.length);
+						}
+					<%}%> 
+				<%}%>
+			 
+			if(country_name != '<%= client.country %>'){
+			
+				var countryname = country_name;
+				<% for(var i=0; i < phonecode.length; i++){ %>
+				
+					if (countryname ==  '<%= phonecode[i].name %>' && '<%= phonecode[i].dial_code %>' != '' ) {
+						$('#officeno').val('' + '<%=phonecode[i].dial_code%>');
+						
+						document.getElementById("id2").value = '' + '<%=phonecode[i].dial_code%>';
+						
+						makeInitialTextReadOnly(document.getElementById("officeno"),0);
+						document.getElementById('select-container').innerHTML = "";
+					
+					}
+						
+					
+				<%}%> 
+			}
+      });
+	 }
+	 
+	 else
+	 {
+	   $('#city').append($('<option>', {
+			value: '',
+			text: 'Select City'
+		}));
+		document.getElementById("officeno").disabled=true;
+	 }
+	
+	document.getElementById("id3").value = '<%= client.officeno.length %>' - 1 ;
+	
+    }).change();
+    
+    	
+	
+	 
+	
+	
+	
+    
+	
+	
+	var sortSelect = function (select, attr, order) {
+    if(attr === 'text'){
+        if(order === 'asc'){
+            $(select).html($(select).children('option').sort(function (x, y) {
+                return $(x).text().toUpperCase() < $(y).text().toUpperCase() ? -1 : 1;
+            }));
+            $(select).get(0).selectedIndex = 0;
+            
+        }// end asc
+        if(order === 'desc'){
+            $(select).html($(select).children('option').sort(function (y, x) {
+                return $(x).text().toUpperCase() < $(y).text().toUpperCase() ? -1 : 1;
+            }));
+            $(select).get(0).selectedIndex = 0;
+            e.preventDefault();
+        }// end desc
+      }
+    };
+	
+    function makeInitialTextReadOnly(input,len) {
+	var readOnlyLength;
+	  if(len != 0)
+	     readOnlyLength = input.value.substring(0,len).length;
+	  else
+	     readOnlyLength = input.value.length;
+		input.addEventListener('keydown', function(event) {
+			var which = event.which;
+			if (((which == 8) && (input.selectionStart <= readOnlyLength))
+					|| ((which == 46) && (input.selectionStart < readOnlyLength))) {
+				event.preventDefault();
+			}
+		});
+		input.addEventListener('keypress', function(event) {
+			var which = event.which;
+			if ((event.which != 0) && (input.selectionStart < readOnlyLength)) {
+				event.preventDefault();
+			}
+		});
+		input.addEventListener('cut', function(event) {
+			if (input.selectionStart < readOnlyLength) {
+				event.preventDefault();
+			}
+		});
+		input.addEventListener('paste', function(event) {
+			if (input.selectionStart < readOnlyLength) {
+				event.preventDefault();
+			}
+		});
+	}	
+ 	
+	
+ </script> 
+<script src="/javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/chartist.min.js"></script>
+<script src="/javascripts/bootstrap-notify.js"></script>
+<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<script src="/javascripts/light-bootstrap-dashboard.js?v=1.4.0"></script>   

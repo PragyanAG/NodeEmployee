@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+	
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+	
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">  
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+	<link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="/stylesheets/animate.min.css" rel="stylesheet"/>
+    <link href="/stylesheets/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image/image/sidebar-5.jpg>
+		      <div class="sidebar-wrapper">
+		
+                    <div class="logo">
+                        <a target="_blank" href="http://www.safe-lanes.com" class="simple-text">
+                             <img src="/images/SafeLanes_logo.png" class="imgclass" />
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li>
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+					   						
+						<li>
+                            <a href="/employees">
+                               <p>Employee Master</p>
+                            </a>
+                        </li>
+						
+                        <li class="active">
+                            <a href="/vdranalysiss">
+                                <p>VDR Job Tracker</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/jobassignments">
+                               <p>Vessel Job Tracker</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/clients">
+                               <p>Client Details</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/observationanalysis">
+                               <p>Observation Analysis</p>
+                             </a>
+                        </li>
+                    </ul>
+                </div>
+            
+        </div>
+        
+<div class="main-panel" data-color="orange" >
+        <nav class="navbar navbar-default navbar-fixed" >
+            <div class="container-fluid">
+	    <!--added new -->
+	    	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+	   <!--added new -->
+                <div  align="right">
+                   <a href="">Account</a>
+                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                   <a href="#">Log out</a>
+                </div>
+            </div>
+			
+		</nav>
+		
+		
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		 <li class="nav-item active">
+         <a class="nav-link active" id="vdrtracker-tab" data-toggle="tab" href="#vdrtracker" role="tab" aria-controls="vdrtracker" aria-selected="true">VDR Tracker List</a>
+         </li>
+		  
+		  <li class="nav-item">
+			<a class="nav-link" id="completed-tab" data-toggle="tab" href="#completed" role="tab" aria-controls="completed" aria-selected="false">Completed</a>
+		  </li>
+		   <li class="nav-item">
+			<a class="nav-link" id="cancelled-tab" data-toggle="tab" href="#cancelled" role="tab" aria-controls="cancelled" aria-selected="false">Cancelled</a>
+		  </li>
+		   <li class="nav-item">
+			<a class="nav-link" id="overdue-tab" data-toggle="tab" href="#overdue" role="tab" aria-controls="overdue" aria-selected="false">OverDue</a>
+		  </li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+		   <div class="tab-pane active in" id="vdrtracker" role="tabpanel" aria-labelledby="vdrtracker-tab">
+		      
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h5><a href="/vdranalysiss/create">Create VDR Job Tracker</a></h5>
+                                 <h5>VDR Job Tracker</h5>
+								 
+								
+                            </div>
+                            <div class="content table-responsive table-full-width">
+							 <% if(vdranalysiss.length>0) { %>
+                                <table id="myTable1"> 
+                                    <thead>
+									<tr>
+									<th>VDR Code</th>
+									<th>Company</th>
+                                    <th>Veesel</th>
+                                    <th>VDR Make/Model</th>
+                                    <th>Due Date</th>
+                                    <th>Analysis By</th>
+									<th>Auditor</th>
+									<th>Status</th>
+									</tr>
+                                </thead>
+                               <tbody>
+			
+			                    <% for(var i=0; i<vdranalysiss.length;i++) { %>
+                                   <tr>
+                                     <td><a href="/vdranalysiss/show/<%= vdranalysiss[i]._id%>"><%= vdranalysiss[i].vdr_id%></a></td>
+                                    <td><%= vdranalysiss[i].company%></td>
+									<td><%= vdranalysiss[i].vessel%></td>
+								    <td><%= vdranalysiss[i].vdrmake%></td>
+								    <td><%= vdranalysiss[i].duedate!=null ? vdranalysiss[i].duedate.toLocaleDateString("en-US"): vdranalysiss[i].duedate%></td>
+								    <td><%= vdranalysiss[i].analysis%></td>
+									<td><%= vdranalysiss[i].auditorname%></td>
+									<td><%= vdranalysiss[i].status%></td>
+							       </tr>
+                                <% } %>
+							   </tbody>
+                          </table>
+                             <% } else { %>
+                         <div class="header">No VDR Job Tracker found.</div>
+                               <% } %>
+                         </div>
+			
+			
+			
+                         </div>
+                        </div>
+                    </div>
+                  </div>
+                 </div>
+               
+			   <div class="tab-pane fade" id="completed" role="tabpanel" aria-labelledby="completed-tab">
+		      <div class="container-fluid">
+			   <div class="row">
+                    <div class="col-md-12">
+					  <div class="card">
+					   <div class="content table-responsive table-full-width">
+					      <% if(vdranalysiss.length>0) { %>
+                                 <table id="myTable2"> 
+                                    <thead>
+									<tr>
+									<th>VDR Code</th>
+									<th>Company</th>
+                                    <th>Veesel</th>
+                                    <th>VDR Make/Model</th>
+                                    <th>Due Date</th>
+                                    <th>Analysis By</th>
+									<th>Auditor</th>
+									<th>Status</th>
+                                    </tr>
+                                </thead>
+                               <tbody>
+			
+			                    <% for(var i=0; i<vdranalysiss.length;i++) { %>
+								  <% if (vdranalysiss[i].status == "completed"){%>
+                                   <tr>
+                                      <td><a href="/vdranalysiss/show/<%= vdranalysiss[i]._id%>"><%= vdranalysiss[i].vdr_id%></a></td>
+                                    <td><%= vdranalysiss[i].company%></td>
+									<td><%= vdranalysiss[i].vessel%></td>
+								    <td><%= vdranalysiss[i].vdrmake%></td>
+								    <td><%= vdranalysiss[i].duedate!=null ? vdranalysiss[i].duedate.toLocaleDateString("en-US"): vdranalysiss[i].duedate%></td>
+								    <td><%= vdranalysiss[i].analysis%></td>
+									<td><%= vdranalysiss[i].auditorname%></td>
+									<td><%= vdranalysiss[i].status%></td>
+							       </tr>
+                                <% }} %>
+							   </tbody>
+                          </table>
+                             <% } else { %>
+                         <div class="header">No VDR Job Tracker found.</div>
+                               <% } %>
+					   </div>
+					  </div>
+					</div>
+				</div>
+			  </div>
+		   </div>
+		   <div class="tab-pane fade" id="overdue" role="tabpanel" aria-labelledby="overdue-tab">
+		      <div class="container-fluid">
+			   <div class="row">
+                    <div class="col-md-12">
+					  <div class="card">
+					   <div class="content table-responsive table-full-width">
+					      <% if(vdranalysiss.length>0) { %>
+                                 <table id="myTable4"> 
+                                    <thead>
+									<tr>
+									<th>VDR Code</th>
+									<th>Company</th>
+                                    <th>Veesel</th>
+                                    <th>VDR Make/Model</th>
+                                    <th>Due Date</th>
+                                    <th>Analysis By</th>
+									<th>Auditor</th>
+									<th>Status</th>
+									<th>OverDue Days</th>
+                                    </tr>
+                                </thead>
+                               <tbody>
+			
+			                    <% for(var i=0; i<vdranalysiss.length;i++) { %>
+								  <% if (vdranalysiss[i].dayscount > 0){%>
+                                   <tr>
+                                      <td><a href="/vdranalysiss/show/<%= vdranalysiss[i]._id%>"><%= vdranalysiss[i].vdr_id%></a></td>
+                                    <td><%= vdranalysiss[i].company%></td>
+									<td><%= vdranalysiss[i].vessel%></td>
+								    <td><%= vdranalysiss[i].vdrmake%></td>
+								    <td><%= vdranalysiss[i].duedate!=null ? vdranalysiss[i].duedate.toLocaleDateString("en-US"): vdranalysiss[i].duedate%></td>
+								    <td><%= vdranalysiss[i].analysis%></td>
+									<td><%= vdranalysiss[i].auditorname%></td>
+									<td><%= vdranalysiss[i].status%></td>
+									<td><%= vdranalysiss[i].dayscount%></td>
+							       </tr>
+                                <% }} %>
+							   </tbody>
+                          </table>
+                             <% } else { %>
+                         <div class="header">No VDR Job Tracker found.</div>
+                               <% } %>
+					   </div>
+					  </div>
+					</div>
+				</div>
+			  </div>
+		   </div>
+		<div class="tab-pane fade" id="cancelled" role="tabpanel" aria-labelledby="cancelled-tab">
+		      <div class="container-fluid">
+			   <div class="row">
+                    <div class="col-md-12">
+					  <div class="card">
+					   <div class="content table-responsive table-full-width">
+					      <% if(vdranalysiss.length>0) { %>
+                                 <table id="myTable3"> 
+                                    <thead>
+									<tr>
+									<th>VDR Code</th>
+									<th>Company</th>
+                                    <th>Veesel</th>
+                                    <th>VDR Make/Model</th>
+                                    <th>Due Date</th>
+                                    <th>Analysis By</th>
+									<th>Auditor</th>
+									<th>Status</th>
+                                    </tr>
+                                </thead>
+                               <tbody>
+			
+			                    <% for(var i=0; i<vdranalysiss.length;i++) { %>
+								  <% if (vdranalysiss[i].status == "cancelled"){%>
+                                   <tr>
+                                     <td><a href="/vdranalysiss/show/<%= vdranalysiss[i]._id%>"><%= vdranalysiss[i].vdr_id%></a></td>
+                                    <td><%= vdranalysiss[i].company%></td>
+									<td><%= vdranalysiss[i].vessel%></td>
+								    <td><%= vdranalysiss[i].vdrmake%></td>
+								    <td><%= vdranalysiss[i].duedate!=null ? vdranalysiss[i].duedate.toLocaleDateString("en-US"): vdranalysiss[i].duedate%></td>
+								    <td><%= vdranalysiss[i].analysis%></td>
+									<td><%= vdranalysiss[i].auditorname%></td>
+									<td><%= vdranalysiss[i].status%></td>
+							       </tr>
+                                <% }} %>
+							   </tbody>
+                          </table>
+                             <% } else { %>
+                        <div class="header">No VDR Job Tracker found.</div>
+                               <% } %>
+					   </div>
+					  </div>
+					</div>
+				</div>
+			  </div>
+		   </div>
+</body>
+</html>
+<script>
+$.noConflict();
+jQuery( document ).ready(function( $ ) {
+
+
+   $('#myTable1').DataTable();
+   $('#myTable2').DataTable();
+   $('#myTable3').DataTable();
+   $('#myTable4').DataTable();
+	
+	  var oTable = $('#myTable1').dataTable();
+      oTable.fnFilter('Active');
+  	  oTable.$('tr', {"filter": "applied"}).css('backgroundColor', 'rgb(114, 171, 220)');
+  	  oTable.fnFilter('');
+	 
+	  oTable.fnFilter('completed');
+  	  oTable.$('tr', {"filter": "applied"}).css('backgroundColor', '#9ACD32');
+  	  oTable.fnFilter('');
+	 
+	  oTable.fnFilter('cancelled');
+  	  oTable.$('tr', {"filter": "applied"}).css('backgroundColor', '#ffdb58');
+  	  oTable.fnFilter('');
+	 
+	  var oTable1 = $('#myTable2').dataTable();
+	  oTable1.fnFilter('completed');
+  	  oTable1.$('tr', {"filter": "applied"}).css('backgroundColor', '#9ACD32');
+  	  oTable1.fnFilter('');
+	  
+	  var oTable2 = $('#myTable3').dataTable();
+	  oTable2.fnFilter('cancelled');
+  	  oTable2.$('tr', {"filter": "applied"}).css('backgroundColor', '#ffdb58');
+  	  oTable2.fnFilter('');
+	 
+	 
+ 
+	 
+	 
+	 var myTable = document.getElementById('myTable4');
+	
+    <% for(var i=0; i<vdranalysiss.length;i++) { %>
+	    
+		
+	
+		 if ('<%=vdranalysiss[i].duedate%>' != ""){	
+		    
+			var calDuedate;
+			var duedate = '<%=vdranalysiss[i].duedate%>';
+			var dt1 = new Date(duedate);
+			var firstdate = $.datepicker.formatDate('yy-mm-dd',dt1);
+			 
+				var alldocrcvd='<%=vdranalysiss[i].alldocrcvd%>';
+				var alldocrcvd1 = new Date(alldocrcvd);
+				var alldocrcvd2 = $.datepicker.formatDate('yy-mm-dd', alldocrcvd1);
+				var drcvclient='<%=vdranalysiss[i].drcvclient%>';
+				var drcvclient1 = new Date(drcvclient);
+			    var drcvclient2 = $.datepicker.formatDate('yy-mm-dd', drcvclient1);
+			 
+			 
+			if(alldocrcvd2 >= drcvclient2){
+			    calDuedate = alldocrcvd2;
+			}
+			else{
+			    calDuedate = drcvclient2;
+			}
+			 
+	         var seconddate = addWorkDays(new Date(calDuedate),14);
+             
+			
+			var dt2 = new Date(seconddate);
+			var seconddate = $.datepicker.formatDate('yy-mm-dd',dt2);
+			
+			console.log(firstdate);
+			console.log(seconddate);
+			
+			  
+			  if(firstdate <= seconddate){
+			  
+	               var oTablemyTab1 = $('#myTable4').dataTable();
+				   oTablemyTab1.fnFilter('<%=vdranalysiss[i].vdr_id%>');
+				   oTablemyTab1.$('tr', {"filter": "applied"}).css('backgroundColor', '#9ACD32');
+				   oTablemyTab1.fnFilter('');
+				
+				  
+				   var oTablemyTab2 = $('#myTable1').dataTable();
+				   oTablemyTab2.fnFilter('<%=vdranalysiss[i].vdr_id%>');
+				   oTablemyTab2.$('tr', {"filter": "applied"}).css('backgroundColor', '#9ACD32');
+				   oTablemyTab2.fnFilter('');
+				}
+			  else{
+			       var oTablemyTab1 = $('#myTable4').dataTable();
+				   oTablemyTab1.fnFilter('<%=vdranalysiss[i].vdr_id%>');
+				   oTablemyTab1.$('tr', {"filter": "applied"}).css('backgroundColor', '#FFC0CB');
+				   oTablemyTab1.fnFilter('');
+
+				 
+				   
+				   var oTablemyTab2 = $('#myTable1').dataTable();
+				   oTablemyTab2.fnFilter('<%=vdranalysiss[i].vdr_id%>');
+				   oTablemyTab2.$('tr', {"filter": "applied"}).css('backgroundColor', '#FFC0CB');
+				   oTablemyTab2.fnFilter('');
+				}
+			
+	   }
+	<%}%>
+	 
+	
+});
+
+
+function addWorkDays(startDate, days) {
+
+    // Get the day of the week as a number (0 = Sunday, 1 = Monday, .... 6 = Saturday)
+    var dow = startDate.getDay();
+    var daysToAdd = parseInt(days);
+    // If the current day is Sunday add one day
+    if (dow == 0)
+        daysToAdd++;
+    // If the start date plus the additional days falls on or after the closest Saturday calculate weekends
+    if (dow + daysToAdd >= 6) {
+        //Subtract days in current working week from work days
+        var remainingWorkDays = daysToAdd - (5 - dow);
+        //Add current working week's weekend
+        daysToAdd += 2;
+        if (remainingWorkDays > 5) {
+            //Add two days for each working week by calculating how many weeks are included
+            daysToAdd += 2 * Math.floor(remainingWorkDays / 5);
+            //Exclude final weekend if remainingWorkDays resolves to an exact number of weeks
+            if (remainingWorkDays % 5 == 0)
+                daysToAdd -= 2;
+        }
+    }
+    startDate.setDate(startDate.getDate() + daysToAdd);
+    return startDate;
+}
+// Code that uses other library's $ can follow here.
+</script>
+
+<script src="/javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/chartist.min.js"></script>
+<script src="/javascripts/bootstrap-notify.js"></script>
+<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<script src="/javascripts/light-bootstrap-dashboard.js?v=1.4.0"></script>    		

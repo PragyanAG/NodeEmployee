@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+	
+	
+    <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+	<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+	
+	
+	<link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="/stylesheets/animate.min.css" rel="stylesheet"/>
+    <link href="/stylesheets/main.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image/image/sidebar-5.jpg>
+		      <div class="sidebar-wrapper">
+		
+                    <div class="logo">
+                        <a target="_blank" href="http://www.safe-lanes.com" class="simple-text">
+                             <img src="/images/SafeLanes_logo.png" class="imgclass" />
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li>
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+					   
+						
+						<li>
+                            <a href="/employees">
+                               <p>Employee Master</p>
+                            </a>
+                        </li>
+						
+                        <li>
+                            <a href="/vdranalysiss">
+                                <p>VDR Job Tracker</p>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/jobassignments">
+                               <p>Vessel Job Tracker</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/clients">
+                               <p>Client Details</p>
+                            </a>
+                        </li>
+						<li class="active">
+                            <a href="/observationanalysis">
+                               <p>Observation Analysis</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            
+        </div>
+        
+  <div class="main-panel" data-color="orange" >
+        <nav class="navbar navbar-default navbar-fixed" >
+            <div class="container-fluid">
+	    <!--added new -->
+	    	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+	   <!--added new -->
+                <div  align="right">
+                   <a href="">Account</a>
+                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                   <a href="#">Log out</a>
+                </div>
+            </div>
+			
+		</nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h5><a href="/observationanalysis/create">Create Observation Analysis</a></h5>
+                                 <h5>Observation Analysis List</h5>
+								
+                            </div>
+                            <div class="content table-responsive table-full-width">
+							 <% if(observationanalysis.length>0) { %>
+                               <table id="myTable" class="table table-striped" > 
+                                    <thead>
+									<tr>
+									<th></th>
+									<th>JobCategory</th>
+                                    <th>Job Type</th>
+                                    <th>Vessel</th>
+									<th>Company</th>
+									<th>Country</th>
+									<th>Status</th>
+                                    </tr>
+                                </thead>
+                               <tbody>
+			
+			                    <% for(var i=0; i<observationanalysis.length;i++) { %>
+									
+								 
+                                   <tr>
+								   <td> <a data-toggle="modal" href="#myModal" class="pull-left">
+								   <img src='/images/Excel_Icon.png' title="Upload Observations" align="left"  
+								   onclick="callobservations('<%= observationanalysis[i].obs_Analysisid%>');"/></a></td>
+                                     <td><a href="/observationanalysis/show/<%= observationanalysis[i]._id%>"><%= observationanalysis[i].jobcategory%></a></td>
+                                    <td><%= observationanalysis[i].jobtype%></td>
+									<td><%= observationanalysis[i].vessel%></td>
+									<td><%= observationanalysis[i].company%></td>
+									<td><%= observationanalysis[i].country%></td>
+									<td><%= observationanalysis[i].status%></td>
+								   </tr>
+                                <% } %>
+							   </tbody>
+                          </table>
+                             <% } else { %>
+                         <div class="header">No Observation Analysis found.</div>
+                               <% } %>
+                         </div>
+			
+			
+			
+                         </div>
+                        </div>
+                    </div>
+
+
+                   
+
+
+    </div>
+</div>
+
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                     <div class="modal-dialog">
+                     <div class="modal-content" >
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Upload Observations</h4>
+                     </div>
+                     <div class="modal-body" style="height: 600px;overflow-y: auto;">
+					 <form id ="observation" enctype="multipart/form-data" method="post" >
+					 <input id="id1" type="hidden" name="id1" value=""/>
+					 
+                     <div class="row">
+                     <div class="col-md-12">
+                        <div class="card">
+
+                            <div class="container">
+                                <div class="content">
+								
+								<div class="row">
+								    <div class="col-md-4">
+						               <div class="form-group">
+                                           <label>Upload Observations</label>
+                                           <input type="file" class="form-control-file" name="file" id="file"  onchange="checkfile(this);"/>
+									
+						               </div>
+								    </div>
+                                </div>
+                               <input type="button" id ="importdata" class="btn btn-info btn-fill pull-left" value="Upload"/> 
+							    <div class="clearfix"></div>  
+		                          
+		                        </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+						 <div class="content table-responsive table-full-width">
+                            
+                            <table class="table table-hover table-striped" id="tab1">
+                                    <thead>
+									<tr>
+									<th>Category</th>
+									<th>Sub Category</th>
+									<th>Observation</th>
+									<th>Risk</th>
+									</tr>
+                                </thead>
+                              
+							</table>
+                               
+                        </div>							   
+		               </div>
+			        </div>
+		        </div>
+				</form>
+              </div>
+                     
+                    </div>
+
+                   
+
+
+    </div>
+</div>
+
+								 
+    							 
+                                     
+		                          
+		                       
+
+
+</body>
+</html>
+<script>
+$.noConflict();
+jQuery( document ).ready(function( $ ) {
+    $('#myTable').DataTable();
+	$('tr').each(function(){
+           if($(this).find('td:last').text().trim() === "Active"){
+		   
+             
+			  
+			  $(this).css('background','rgb(114, 171, 220)');
+          }
+		  if($(this).find('td:last').text().trim() === "Inactive"){
+		   
+		      $(this).css('background','#BCBABE');
+			  }
+		 
+		  
+        });
+});
+
+function checkfile(sender) {
+   
+    var validExts = new Array(".xlsx", ".xls", ".csv");
+    var fileExt = sender.value;
+    fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+    if (validExts.indexOf(fileExt) < 0) {
+      alert("Invalid file selected, valid files are of " +
+               validExts.toString() + " types.");
+	  
+      $('#importdata').prop('disabled', true);
+      return false;
+    }
+    else {
+	$('#importdata').prop('disabled', false);
+	return true;
+	}
+}
+
+
+$('.close').on('click', function () {
+		        $.ajax({
+				type: "GET",
+				url: "/observationanalysis",
+				data: {},
+				processData: false,
+				contentType: false,
+				cache: false,
+				timeout: 600000,
+				
+				error: function (e) {
+					   console.log("ERROR : ", e);
+				}
+			});
+			 
+			 
+		});
+
+function callobservations(obs_Analysisid){
+
+document.getElementById("file").value="";
+$('#importdata').prop('disabled', false);
+document.getElementById("id1").value = obs_Analysisid;
+
+ 	
+ $.ajax(
+    {
+        type: "GET",
+        url: "/observationanalysis/returnobs",
+        data: { obs_Analysisid: document.getElementById("id1").value },
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        cache: false,
+        success: function (dataobs) {
+            
+        
+          var trHTML = '';
+        $('#tab1 tbody > tr').remove();  
+       
+          
+             for(var i=0; i<dataobs.length;i++) { 
+			 var item = dataobs[i];
+			 var trHTML;
+			 
+             trHTML +="<tr>";
+			 trHTML +="<td>" + item.category + "</td>";
+			 trHTML +="<td>" + item.subcategory + "</td>";
+			 trHTML +="<td>" + item.observation + "</td>";
+			 
+			
+			 trHTML +="<td>" + item.risk + "</td>";
+			 
+			 }  
+			
+       $('#tab1').append(trHTML);
+	  
+        
+        },
+       error: function (msg) {
+            
+            
+        }
+    });
+   }
+   
+   $("#importdata").click(function (event) {
+   
+        var form = $('#observation')[0];
+
+		// Create an FormData object
+        var data = new FormData(form);
+    
+    
+        $.ajax({
+           type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/observationanalysis/upload",
+            data: data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success: function (dataobs)  {
+           
+            var trHTML = '';
+            $('#tab1 tbody > tr').remove();  
+       
+          
+             for(var i=0; i<dataobs.length;i++) { 
+			 var item = dataobs[i];
+			 var trHTML;
+			 
+             trHTML +="<tr>";
+			 trHTML +="<td>" + item.category + "</td>";
+			 trHTML +="<td>" + item.subcategory + "</td>";
+			 trHTML +="<td>" + item.observation + "</td>";
+			 
+			
+			 trHTML +="<td>" + item.risk + "</td>";
+			 
+			 }  
+			
+            $('#tab1').append(trHTML);
+       
+        
+            },
+            error: function (e) {
+
+                //$("#result").text(e.responseText);
+                console.log("ERROR : ", e);
+                
+
+            }
+        });
+	  
+	     
+		   
+	  
+	  
+    });
+// Code that uses other library's $ can follow here.
+</script>
+<script src="/javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/chartist.min.js"></script>
+<script src="/javascripts/bootstrap-notify.js"></script>
+<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<script src="/javascripts/light-bootstrap-dashboard.js?v=1.4.0"></script>    

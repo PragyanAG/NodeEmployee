@@ -1,0 +1,661 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+	
+	
+    <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+	<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+	
+	<link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="/stylesheets/animate.min.css" rel="stylesheet"/>
+    <link href="/stylesheets/main.css" rel="stylesheet" />
+	
+	
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image/image/sidebar-5.jpg>
+		      <div class="sidebar-wrapper">
+		
+
+                    <div class="logo">
+                        <a target="_blank" href="http://www.safe-lanes.com" class="simple-text">
+                           <img src="/images/SafeLanes_logo.png" class="imgclass" />
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li>
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+					   
+						
+						<li>
+                            <a href="/employees">
+                               <p>Employee Master</p>
+                            </a>
+                        </li>
+						
+                        <li>
+                            <a href="/vdranalysiss">
+                                <p>VDR Job Tracker</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/jobassignments">
+                               <p>Vessel Job Tracker</p>
+                            </a>
+                        </li>
+						<li class="active">
+                            <a href="/clients">
+                               <p>Client Details</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/observationanalysis">
+                               <p>Observation Analysis</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+     <div class="main-panel" data-color="orange" >
+        <nav class="navbar navbar-default navbar-fixed" >
+            <div class="container-fluid">
+	    <!--added new -->
+	    	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+	   <!--added new -->
+                <div  align="right">
+                   <a href="">Account</a>
+                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                   <a href="#">Log out</a>
+                </div>
+            </div>
+			
+		</nav>
+           
+			
+			
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h5><a href="/clients/create">Create Client</a></h5>
+                                 <h5>Client List</h5>
+                                
+                            </div>
+                            <div class="content table-responsive table-full-width">
+							 <% if(clients.length>0) { %>
+                                <table id="myTable" class="table table-striped" > 
+                                    <thead>
+									<tr>
+									<th>Add Contacts</th>
+                                    <th>Company Name</th>
+                                    <th>Country</th>
+									<th>City</th>
+									<th>Office Ph.No</th>
+									<th>Website</th>
+									<th>Status</th>
+                                    </tr>
+                                </thead>
+                               <tbody>
+			
+			                    <% for(var i=0; i<clients.length;i++) { %>
+                                   <tr>
+								     <td> <a data-toggle="modal" href="#myModal" class="pull-left"><img src='/images/add-contacts-icon.png' title="Add Contacts" align="left" hspace="10" onclick="callClient('<%= clients[i].client_id%>');"/></a>
+                                     <td><a href="/clients/show/<%= clients[i]._id%>"><%= clients[i].companyname%></a></td>
+                                     <td><%= clients[i].country%></td>
+									 <td><%= clients[i].city%></td>
+									 <td><%= clients[i].officeno[0]%></td>
+									 <td><a target="_blank" href ="http://<%= clients[i].website%>"><%= clients[i].website%></a></td>
+									 <td><%= clients[i].status%></td>
+								    </tr>
+                                <% } %>
+							   </tbody>
+                          </table>
+                             <% } else { %>
+                         <div class="header">No Client found.</div>
+                               <% } %>
+                         </div>
+			
+			
+			
+                         </div>
+                        </div>
+                    </div> 
+                  </div>
+              </div>
+			  
+			  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                     <div class="modal-dialog" role="document">
+                     <div class="modal-content" >
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Contact Details</h4>
+                     </div>
+                     <div class="modal-body" style="height: 700px;overflow-y: auto;">
+					 <form id ="clientcontact" method="post" >
+					 <input id="id1" type="hidden" name="id1" value=""/>
+					 <input id="id2" type="hidden" name="id2" value=""/>
+					 <input id="id3" type="hidden" name="id3" value=""/>
+					 <input id="id4" type="hidden" name="id4" value=""/>
+					 <input id="id5" type="hidden" name="id5" value=""/>
+                     <div class="row">
+                     <div class="col-md-12">
+                        <div class="card">
+
+                            <div class="container">
+                                <div class="content">
+                                   <form role="form" id="newModalForm1">
+								   
+			                          <div class="row">
+                                       <div class="col-md-2">
+                                         <div class="form-group">
+                                           
+                                           <label>First Name *</label>
+                                                 <input type="text" class="form-control required" placeholder="First Name" name="firstname" id="firstname" >
+									        
+									   </div>
+                                   </div>
+                                   <div class="col-md-2">
+                                          <div class="form-group">
+                                           
+                                           <label>Last Name </label>
+                                                <input type="text" class="form-control" placeholder="Last Name" name="lastname" id="lastname">
+                                      </div>
+									</div>
+                                 </div>
+								 <div class="row">
+                                       <div class="col-md-2">
+                                         <div class="form-group">
+                                           
+                                           <label>Designation *</label>
+                                                 <input type="text" class="form-control" placeholder="Designation" name="designation" id="designation" required>
+									  
+									   </div>
+                                   </div>
+									   
+									  
+                                   <div class="col-md-2">
+                                          <div class="form-group">
+                                           
+                                           <label>Mobile Number *</label>
+                                                <input type="text" class="form-control" placeholder="Mobile Number" name="mobileno" id="mobileno" required>
+                                      </div>
+									</div>
+                                 </div>
+								 
+								  <div class="row">
+                                      
+                                           <div class="col-md-2">
+                                         <div class="form-group">
+                                           
+                                            <label>Office Number </label>
+                                                 <input type="text" class="form-control" placeholder="Office Number" name="officeno" id="officeno">
+									                                     
+									  
+									   </div>
+                                   </div>
+									  
+                                   <div class="col-md-2">
+                                          <div class="form-group">
+                                           
+                                           <label>Email *</label>
+                                                <input type="email" class="form-control" placeholder="Email" name="email" id="email" required>
+                                      </div>
+									</div>
+									 <div class="col-md-2">
+                                      <div class="form-group">
+                                          <label></label>
+                                                <h5><a id="mailtag" href="#" onclick="mail();return false;">Add Email</a><h5>
+                                      </div>
+                                   </div>
+                                 </div>
+								  
+								   <div class="row" >
+								 <div class="col-md-2" id="mail-container">
+                                      
+									  </div>
+                                 </div>
+								
+								  
+								 <font color='red'> <DIV id="une"> </DIV> </font>
+								  <div class="row" >
+								  <div class="col-md-2">
+								  	 <input id="subbtn1" type="button" class="btn btn-info btn-fill pull-left" value ="Save Contact Details"/>					             
+								  </div>
+								  <div class="col-md-2">
+								 <input id="subbtn2" type="button" class="btn btn-info btn-fill pull-left" value ="Cancel"/>
+								 </div>
+								 </div>
+								 <div class="clearfix"></div>
+                                     
+		                          
+		                        </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+						 <div class="content table-responsive table-full-width">
+                            
+                            <table class="table table-hover table-striped" id="tab1">
+                                   <thead>
+									<tr>
+                                    <th>First Name</th>
+									
+									<th>Designation</th>
+									
+									<th>Office Number</th>
+									<th>Mobile Number</th>
+                                    <th>Action</th>
+                                    </tr>
+                                </thead>
+                              
+							</table>
+                               
+                        </div>							   
+		               </div>
+			        </div>
+		        </div>
+				</div>
+				</form>
+              
+                     
+                    </div>
+
+                   
+
+
+    </div>
+</div>
+</body>
+</html>
+<script>
+$.noConflict();
+jQuery( document ).ready(function( $ ) {
+    $('#myTable').DataTable();
+	var oTable = $('#myTable').dataTable();
+	
+	oTable.fnFilter('Active');
+  	oTable.$('tr', {"filter": "applied"}).css('backgroundColor', 'rgb(114, 171, 220)');
+  	oTable.fnFilter('');
+
+    oTable.fnFilter('Inactive');
+  	oTable.$('tr', {"filter": "applied"}).css('backgroundColor', '#BCBABE');
+  	oTable.fnFilter('');
+	
+    });
+
+    var j=1;
+	function mail(){
+	    document.getElementById('mail-container').style.display = 'block';
+		
+		j = $("#mail-container > div").length + 1;
+		
+		addSelect1('mail-container',j);
+		document.getElementById("id3").value = j ;
+		j++;
+		
+	}
+
+function regvalidate()
+	{
+	if(document.getElementById("firstname").value=="")
+	 {
+	  document.getElementById('une').innerHTML = "First name should not be empty";
+	  document.getElementById("firstname").focus();
+	  return(false);
+	 }
+	if(document.getElementById("designation").value=="")
+	  {
+	  document.getElementById('une').innerHTML = "Designation field should not be empty";
+	  document.getElementById("designation").focus();
+	  return(false);
+	 }
+	if(document.getElementById("email").value=="")
+	  {
+	  document.getElementById('une').innerHTML = "Email id required";
+	  document.getElementById("email").focus();
+	  return(false);
+	  }
+    if(document.getElementById("email").value!="")
+	  {
+	      if(email.checkValidity()){
+	             
+				 }
+		  else{
+		       document.getElementById('une').innerHTML = "Please put a valid email";
+			   return(false);
+			   }
+		  
+	  
+	  }
+	  if(j>1){
+	  
+		 for(var k=1;k<j;k++){
+		 var mailid = document.getElementById("emailfield"+ k);
+		 if(mailid!=null){
+			 if(mailid.value != "")
+			  {
+				  if(mailid.checkValidity()){
+						 
+						 }
+				  else{
+					   document.getElementById('une').innerHTML = "Please put a valid email";
+					   return(false);
+					   }
+			   }  
+		  
+		    }
+		  }
+	  }
+	if(document.getElementById("mobileno").value=="")
+	   {
+	  document.getElementById('une').innerHTML = "Please give Mobile Number";
+	  document.getElementById("mobileno").focus();
+	  return(false);
+	   }
+    return true;
+	}
+
+	
+    
+	
+	function addSelect1(divname,i) {
+	var newDiv=document.createElement('div');
+	var element = document.createElement("input");
+	element.setAttribute("type", "email");
+    element.setAttribute("id","emailfield"+j);
+    element.setAttribute("name","emailfield"+j);
+	element.setAttribute("class", "form-control");
+	element.setAttribute("placeholder", "Email");
+	
+	newDiv.appendChild(element);	
+	
+	newDiv.classList.add("form-group");
+	var item = document.getElementById('mail-container');
+	item.appendChild(newDiv);
+	}
+	
+function callClient(client_id){
+
+document.getElementById("id1").value = client_id;
+cleardata();
+
+
+	
+ $.ajax(
+    {
+        type: "GET",
+        url: "/clients/returnclientcontact",
+        data: { client_id: document.getElementById("id1").value },
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        cache: false,
+        success: function (data) {
+            
+        
+           successtbl(data);
+        
+        },
+       error: function (msg) {
+            
+            
+        }
+    });
+	
+	
+	
+   }
+   
+   function successtbl(data1){
+    var trHTML = '';
+        var tb = document.getElementById('tab1');
+		  while(tb.rows.length > 1) {
+		  tb.deleteRow(1);
+        }
+      
+          
+             for(var i=0; i<data1.length;i++) { 
+			 var item = data1[i];
+			 
+			 var trHTML;
+			 document.getElementById("id2").value = item._id;
+             trHTML +="<tr>";
+			 trHTML +="<td>" + item.firstname + "</td>";
+			 trHTML +="<td>" + item.designation + "</td>";
+			 trHTML +="<td>" + item.officeno + "</td>";
+			 trHTML +="<td>" + item.mobileno + "</td>";
+			 trHTML +="<td>";
+			 trHTML +='<a class ="btndelete"><img src="/images/delete.png"></a><input type="hidden" class="itemid" value="'+ item._id +'"/>';
+			 trHTML +='&nbsp;&nbsp; <a class ="btnedit"><img src="/images/edit.png"></a><input type="hidden" class="itemid" value="'+ item._id +'"/></td>';
+			 }  
+			
+       $('#tab1').append(trHTML);
+	   $('.btndelete').on('click', function () {
+		 var check = confirm('Are you sure want to inactive this record?');
+			 if (check == true) {
+			 var itemid = $(this).parent().find('.itemid').val();
+			   $.ajax({
+				type: "GET",
+				url: "/clients/inactiveclientcontact/" + itemid,
+				data: {},
+				processData: false,
+				contentType: false,
+				cache: false,
+				timeout: 600000,
+				success: function (data1) {
+						 successtbl(data1);
+						 cleardata();
+			             document.getElementById('mail-container').style.display = 'none';
+				},
+				error: function (e) {
+
+					   console.log("ERROR : ", e);
+				}
+			});
+			 
+			 }
+			 else{
+			   return false;
+			 }
+		});
+		
+		$('.btnedit').on('click', function () {
+		     
+			 
+			 var itemid = $(this).parent().find('.itemid').val();
+			   $.ajax({
+				type: "GET",
+				url: "/clients/fetchclientcontact/" + itemid,
+				data: {},
+				processData: false,
+				contentType: false,
+				cache: false,
+				timeout: 600000,
+				success: function (data1) {
+				 var item = data1;
+				    $('#id4').val(item._id);
+					
+                    $('#firstname').val(item.firstname);	
+					$('#lastname').val(item.lastname);	
+					$('#officeno').val(item.officeno);	
+					$('#mobileno').val(item.mobileno);
+                    $('#designation').val(item.designation);					
+					$('#email').val(item.email[0]);
+                    $("#subbtn1").val('Update Contact Details');					
+					var len = item.email.length;
+					
+					if(len >1){
+					    document.getElementById('mail-container').style.display = 'block';
+					}
+					
+					document.getElementById("id5").value = len;
+					document.getElementById("id3").value = len -1;
+					
+					document.getElementById('mail-container').innerHTML = "";
+					  for(var i=1;i<len;i++){
+					  
+							var newDiv=document.createElement('div');
+							var element = document.createElement("input");
+							element.setAttribute("type", "email");
+							element.setAttribute("id","emailfield"+i);
+							element.setAttribute("name","emailfield"+i);
+							element.setAttribute("class", "form-control");
+							element.setAttribute("value",item.email[i]);
+							
+						
+							newDiv.appendChild(element);	
+							
+							newDiv.classList.add("form-group");
+							var item1 = document.getElementById('mail-container');
+							item1.appendChild(newDiv);
+						}
+					
+					
+				},
+				error: function (e) {
+
+					   console.log("ERROR : ", e);
+				}
+			});
+			 
+			 
+		});
+}
+
+$("#subbtn1").click(function (event) {
+    
+      if(regvalidate()){  
+	   
+        event.preventDefault();
+
+        // Get form
+        var form = $('#clientcontact')[0];
+        
+		// Create an FormData object
+        var data = new FormData(form);
+         
+		
+		// disabled the submit button
+        var lnkurl;
+        var btnval = $("#subbtn1").val();
+		
+		
+		if(btnval == "Save Contact Details"){
+				 lnkurl = "/clients/addclientcontact";
+				 document.getElementById('mail-container').style.display = 'none';
+	    }
+		else{
+			     lnkurl = "/clients/editclientcontact/" + document.getElementById("id4").value;
+				 document.getElementById('mail-container').style.display = 'block';
+				
+		}
+		
+		$.ajax({
+						type: "POST",
+						url: lnkurl,
+						data: data,
+						processData: false,
+						contentType: false,
+						cache: false,
+						timeout: 600000,
+						success: function (clientcontact) {
+					   
+						successtbl(clientcontact);
+				   
+					
+						},
+						error: function (e) {
+
+							//$("#result").text(e.responseText);
+							console.log("ERROR : ", e);
+							
+
+						}
+					});
+	     
+		     cleardata();
+			 document.getElementById('mail-container').style.display = 'none';
+	  }
+	  
+    });
+   
+   $("#subbtn2").click(function (event) {
+            cleardata();
+			document.getElementById('mail-container').style.display = 'none';
+   
+   });
+   
+   function cleardata(){
+             document.getElementById("firstname").value = "";
+			 document.getElementById("lastname").value = "";	 
+			 document.getElementById("designation").value = "";	 
+			 document.getElementById("mobileno").value = "";	 
+			 document.getElementById("officeno").value = "";
+			 document.getElementById("email").value = "";
+			 $("#mail-container").html("");
+             document.getElementById('une').innerHTML = ""; 			 
+	         $("#subbtn1").val("Save Contact Details");   
+   }
+   
+   $('.close').on('click', function () {
+		        $.ajax({
+				type: "GET",
+				url: "/clients",
+				data: {},
+				processData: false,
+				contentType: false,
+				cache: false,
+				timeout: 600000,
+				
+				error: function (e) {
+					   console.log("ERROR : ", e);
+				}
+			});
+			 
+			 
+		});
+   
+// Code that uses other library's $ can follow here.
+</script>
+<script src="/javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/chartist.min.js"></script>
+<script src="/javascripts/bootstrap-notify.js"></script>
+<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<script src="/javascripts/light-bootstrap-dashboard.js?v=1.4.0"></script>   

@@ -1,0 +1,43 @@
+.rcMenuContainer {
+    font-family:Arial, Helvetica, sans-serif;
+    position: absolute;
+    border: 1px solid #003366;
+    background: #ffffff;
+    padding:2px;
+    width:127px; 
+}
+
+.rcMenuItem {
+font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    padding:1px 0px 1px 10px;
+    width:100%;
+}
+
+.rcMenuItemHover {
+    font-size:11px;
+    font-weight:normal;
+    background-color:#99ccff;
+    color:#000000;
+    padding:1px 0px 1px 10px;
+}
+.rcMenuItemText {
+    font-size:11px;
+    font-weight:normal;
+    border:0px;
+    padding:2px;
+}
+.rcMenuItemTextExt {
+    font-size:11px;
+    font-weight:normal;
+    border:1px dotted grey;
+    padding:2px;
+} 
+.rcMenuSeparator{
+    color:#999;
+	width:120px;;
+}
+.rcImage {
+	padding-right:4px; 
+}

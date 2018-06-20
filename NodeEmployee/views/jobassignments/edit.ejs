@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+	
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	
+	<link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="/stylesheets/animate.min.css" rel="stylesheet"/>
+    <link href="/stylesheets/main.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image/image/sidebar-5.jpg>
+		      <div class="sidebar-wrapper">
+		
+                    <div class="logo">
+                        <a target="_blank" href="http://www.safe-lanes.com" class="simple-text">
+                            <img src="/images/SafeLanes_logo.png" class="imgclass" />
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li>
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+					    
+						
+						<li>
+                            <a href="/employees">
+                               <p>Employee Master</p>
+                            </a>
+                        </li>
+						
+                        <li>
+                            <a href="/vdranalysiss">
+                                <p>VDR Job Tracker</p>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="/jobassignments">
+                               <p>Vessel Job Tracker</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/clients">
+                               <p>Client Details</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/observationanalysis">
+                               <p>Observation Analysis</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+ <div class="main-panel" data-color="orange" >
+        <nav class="navbar navbar-default navbar-fixed" >
+            <div class="container-fluid">
+	    <!--added new -->
+	    	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+	   <!--added new -->
+                <div  align="right">
+                   <a href="">Account</a>
+                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                   <a href="#">Log out</a>
+                </div>
+            </div>
+			
+		</nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                              <h5><a href="/jobassignments">Vessel Job Tracker</a></h5>
+                              <h5>Edit Vessel Job Tracker</h5>
+							  <div align="right">
+							         <h5><a href="/jobs">Add/Edit Jobs</a></h5>
+							  </div>
+							</div>  
+							<div class="content">
+                            <form id="editjobassignment" action="/jobassignments/update/<%= jobassignment._id%>" enctype="multipart/form-data" method="post">
+							
+							<div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                            <label>Company *</label>
+										   <input type="text" class="form-control" name="company" id="company" disabled value="<%= jobassignment.company %>">
+									   </div>
+                                   </div>
+                                    <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Vessel *</label>
+										   <input type="text" class="form-control" id="vessel" disabled value="<%= jobassignment.vessel %>">
+										 </div>
+                                      </div>
+                                   </div>
+                                 
+							
+							      <div class="row">
+								  <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Job Category</label>
+                                                  <select name="jobcategory" class="form-control" id="jobcategory">
+												  <% if(jobassignment.job_catid !=""){ %>
+												     <option selected value='<%= jobassignment.job_catid %>'><%= jobassignment.jobcategory %></option>
+                                                  <% } %>	
+												  <% for(var i=0; i < jobcategory.length; i++){ %>
+														 <% if(jobcategory[i]._id != jobassignment.job_catid){ %>
+															<option value='<%= jobcategory[i]._id %>'><%= jobcategory[i].jobcategory %></li>
+														 <% } %>
+												  <% } %>	 
+                                                   </select>
+                                      </div>
+                                   </div>
+                                    <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Job Type</label>
+                                                  <select name="jobtype" class="form-control" id="jobtype">
+												  </select>
+										 </div>
+                                   </div>
+								   </div>
+								   <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                          <label>Auditor</label>
+                                                 <select name="employeename" class="form-control" id="employeename">
+												 <% if(jobassignment.employee_id !=""){ %>
+												 <option selected value='<%= jobassignment.employee_id %>'><%= jobassignment.employeename %></option>
+                                                  <% } %>
+												  <% for(var i=0; i < employee.length; i++){ %>
+												     <% if(employee[i].employee_id != jobassignment.employee_id){ %>
+												        <option value='<%= employee[i].employee_id %>'><%= employee[i].firstname %> <%= employee[i].lastname %></li>
+                                                     <% } %>
+												  <% } %>	 
+                                                   </select>											  
+                                      </div>
+                                   </div>
+								  
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Vessel Schedule *</label>
+                                                 
+                                          <div class="form-group has-feedback">
+                                              <input type="radio" id="contactChoice1"
+                                               name="contact" value="planned" required>
+                                              <label for="contactChoice1">Planned</label>
+
+                                              <input type="radio" id="contactChoice2"
+                                               name="contact" value="onboard" required>
+                                              <label for="contactChoice2">On Board</label>
+
+                                              <input type="radio" id="contactChoice3"
+                                               name="contact" value="onhold" required>
+                                              <label for="contactChoice3">On Hold</label>
+                                          </div>
+
+									   </div>
+                                   </div>
+								   </div>
+								 
+								  <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Departure</label>
+                                                 <input type="date" class="form-control" placeholder="Departure" name="departure" id="departure" value="<%= jobassignment.departure %>">
+									   </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Arrival</label>
+                                               <input type="date" class="form-control" placeholder="Arrival" name="arrival" id="arrival" value="<%= jobassignment.arrival %>">
+                                      </div>
+                                   </div>
+                                 </div>
+								 
+								 <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Destination from</label>
+										   <select name="destfrom" class="form-control" id="destfrom">
+										     <% if( jobassignment.destto !="") {%>
+										         <option selected value='<%= jobassignment.destfrom %>'><%= jobassignment.destfrom %></option>
+												     <% }else { %>
+													  <option value=''>Select Country</li>
+												     <% } %>
+                                                   <% for(var i=0; i < country.length; i++){ %>
+												        <option value='<%= country[i] %>'><%= country[i] %></li>
+                                                   <% } %>
+												   
+							                      </select>
+												
+										   
+									   </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                     <div class="form-group">
+                                           <label>Destination To</label>
+										   <select name="destto" class="form-control" id="destto">
+										     <% if( jobassignment.destto !="") {%>
+										         <option selected value='<%= jobassignment.destto %>'><%= jobassignment.destto %></option>
+												     <% }else { %>
+													  <option value=''>Select Country</li>
+												     <% } %>
+                                                   <% for(var i=0; i < country.length; i++){ %>
+												        <option value='<%= country[i] %>'><%= country[i] %></li>
+                                                   <% } %>
+												   
+							                      </select>
+										   
+									   </div>
+                                   </div>
+                                 </div>
+								  <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Nearest Airport Destination from</label>
+                                                  <select name="airdestfrom" class="form-control" id="airdestfrom">
+								                     <option selected value='<%= jobassignment.airdestfrom %>'><%= jobassignment.airdestfrom %></option>
+												                                                       
+							                      </select>
+									   </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Nearest Airport Destination To</label>
+                                                <select name="airdestto" class="form-control" id="airdestto">
+								                <option selected value='<%= jobassignment.airdestto %>'><%= jobassignment.airdestto %></option>
+								                </select>
+                                      </div>
+                                   </div>
+                                 </div>
+								  <div class="row">
+									<div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>On Board From Date</label>
+                                               <input type="date" class="form-control" placeholder="On Board From Date" name="bfromdt" id="bfromdt">
+                                      </div>
+                                   </div>
+								   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>On Board To Date</label>
+                                               <input type="date" class="form-control" placeholder="On Board To Date" name="btodt" id="btodt">
+                                      </div>
+                                   </div>
+								   </div>
+								 
+								  <div class="row">
+									
+								   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Report Completed</label>
+                                               <input type="date" class="form-control" placeholder="Report Completed" name="rtcomp" id="rtcomp">
+                                      </div>
+                                   </div>
+								   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Report Delivered</label>
+                                               <input type="date" class="form-control" placeholder="Report Delivered" name="rtdeliver" id="rtdeliver">
+                                      </div>
+                                   </div>
+								   </div>
+								   
+								    <div class="row">
+									<div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Due Date</label>
+                                               <input type="date" class="form-control" placeholder="Due Date" name="dtdue" id="dtdue">
+                                      </div>
+                                   </div>
+								   <div class="col-md-4">
+						               <div class="form-group">
+                                           <label>Upload ETicket</label>
+                                           <input type="file" class="form-control-file" name="etkt[]" multiple/>
+										</div>
+									</div>
+								   </div>
+								   <div class="row">
+								 <div class="col-md-4">
+						               <div class="form-group">
+								              						 
+							           </div>
+								  </div>
+								  <div class="col-md-4">
+						               <div class="form-group">
+											  <% for(var i=0; i < listofdoc.length; i++){ %>
+											  <% if(listofdoc[i].typeofdoc == "ETickets") {%>
+				                               <a href="<%= listofdoc[i].filepath %>" target ="_blank"><%= listofdoc[i].document %></a></br> 
+                                             <%}}%>				 
+							           </div>
+								  </div>
+							    </div>
+								  
+								 <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label>Remarks</label>
+                                                <textarea rows="3" class="form-control" name="remarks" id="remarks"></textarea>
+                                            </div>
+                                        </div>
+                                 </div>
+								 
+								 
+							    <div class="row">
+								    <div class="col-md-4">
+						               <div class="form-group">
+                                           <label>Upload SEQ</label>
+                                           <input type="file" class="form-control-file" name="doc" id="doc"/>
+										</div>
+									</div>
+									<div class="col-md-4">
+						               <div class="form-group">
+                                           <label>Additional Documents</label>
+                                           <input type="file" class="form-control-file" name="files[]" multiple/>
+										</div>
+									</div>
+						        </div>
+								
+								<div class="row" id="document" disabled>
+								 <div class="col-md-4">
+						               <div class="form-group">
+								             <% for(var i=0; i < listofdoc.length; i++){ %>
+											 <% if(listofdoc[i].typeofdoc == "SEQ") {%>
+				                               <a href="<%= listofdoc[i].filepath %>" target ="_blank"><%= listofdoc[i].document %></a></br> 
+                                             <%}}%>								 
+							           </div>
+								  </div>
+								  <div class="col-md-4">
+						               <div class="form-group">
+								             <% for(var i=0; i < listofdoc.length; i++){ %>
+											  <% if(listofdoc[i].typeofdoc != "SEQ") {%>
+								               <a href="<%= listofdoc[i].filepath %>" target ="_blank"><%= listofdoc[i].document %></a></br> 
+                                             <%}}%>								 
+							           </div>
+								  </div>
+							    </div>
+							   
+                                <button type="submit" class="btn btn-info btn-fill pull-right">Update</button>
+							    <div class="clearfix"></div>
+                             </div>
+							
+                           </form>
+                            </div>
+                       </div>
+                    </div>
+			    </div>
+         </body>
+</html>
+
+						 
+<script type="text/javascript">
+
+	jQuery( document ).ready(function( $ ) {
+	
+	 
+	 
+	 var selectemp = document.getElementById("employeename");
+	 var selectjcat = document.getElementById("jobcategory");
+	 
+	 sortSelect(document.getElementById("jobcategory"), 'text', 'asc');
+	 sortSelect(document.getElementById("employeename"), 'text', 'asc');
+	 
+	 if('<%= jobassignment.employee_id %>'!=""){
+	 
+	    $('#employeename').val('<%= jobassignment.employee_id %>');
+	 }
+	 else{
+	    $("#employeename option").eq(0).before($('<option>', {
+		value: '',
+		text: 'Select'
+		}));
+		$("#employeename")[0].selectedIndex = 0;
+	 }
+	 
+	 if('<%= jobassignment.job_catid %>'!=""){
+	   
+	    $('#jobcategory').val('<%= jobassignment.job_catid %>');
+	 }
+	 else{
+       
+		$("#jobcategory option").eq(0).before($('<option>', {
+		value: '',
+		text: 'Select'
+		}));
+		$("#jobcategory")[0].selectedIndex = 0;
+	 }
+	 
+	
+	 
+	if('<%= jobassignment.btodt %>'!=null){
+	
+	jQuery('#btodt').on('input', function() {
+	
+	var dt=document.getElementById("btodt").value;
+	var today1 = new Date(dt);
+    today = addWorkDays(today1, 5);
+	var str = $.datepicker.formatDate('yy-mm-dd', today);
+	
+    $('#dtdue').val(str);
+    });	
+	}
+	 
+	 var dt1 = '<%= jobassignment.departure %>';
+	 d1 = new Date(dt1);
+	
+	 $('#departure').val($.datepicker.formatDate('yy-mm-dd', d1));
+	  
+	 var dt2 = '<%= jobassignment.arrival %>';
+	 d2 = new Date(dt2);
+	 $('#arrival').val($.datepicker.formatDate('yy-mm-dd', d2));
+	 
+	 var dt3 = '<%= jobassignment.bfromdt %>';
+	 d3 = new Date(dt3);
+	 $('#bfromdt').val($.datepicker.formatDate('yy-mm-dd', d3));
+	 
+	 var dt4 = '<%= jobassignment.btodt %>';
+	 d4 = new Date(dt4);
+	 $('#btodt').val($.datepicker.formatDate('yy-mm-dd', d4));
+	 
+	 var dt5 = '<%= jobassignment.rtcomp %>';
+	 d5 = new Date(dt5);
+	 $('#rtcomp').val($.datepicker.formatDate('yy-mm-dd', d5));
+	 
+	 var dt6 = '<%= jobassignment.rtdeliver %>';
+	 d6 = new Date(dt6);
+	 $('#rtdeliver').val($.datepicker.formatDate('yy-mm-dd', d6));
+	 
+	 var dt7 = '<%= jobassignment.dtdue %>';
+	 d7 = new Date(dt7);
+	 $('#dtdue').val($.datepicker.formatDate('yy-mm-dd', d7));
+	 
+	 $('#remarks').val('<%= jobassignment.remarks %>');
+	 
+	 
+	$jobcategory = $('#jobcategory');
+    $jobtype = $('#jobtype');
+	
+	$jobcategory.change(function() {
+    
+    $jobtype.html('');
+    var select = document.getElementById("jobtype");
+	var value = document.getElementById("jobcategory").value;
+	if(value != ''){
+	<% for(var i=0; i < jobtype.length; i++){ %>
+	     if(value == '<%= jobtype[i].jobcategory_id %>'){
+            var el = document.createElement("option");
+            el.textContent = '<%= jobtype[i].jobtype %>';
+            el.value = '<%= jobtype[i]._id %>';
+            select.appendChild(el);
+	     }
+    <%}%> 
+	$('select#jobtype option').removeAttr("selected");
+	sortSelect(document.getElementById("jobtype"), 'text', 'asc');
+		if('<%= jobassignment.job_typeid %>'!=""){
+		   $('#jobtype').val('<%= jobassignment.job_typeid %>');
+		}
+	}	
+	else{
+	
+	        var el = document.createElement("option");
+            el.textContent = 'Select';
+            el.value = '';
+            select.appendChild(el);
+	}
+    }).change();
+	
+	if('<%=jobassignment.vesselschedule%>' != null )
+       {
+           if('<%=jobassignment.vesselschedule%>' == 'planned'){
+              document.getElementById('contactChoice1').checked=true;
+			 
+             }
+          else if('<%=jobassignment.vesselschedule%>' == 'onboard')
+           {
+             document.getElementById('contactChoice2').checked=true;
+		   }
+		   else
+		   {
+		   document.getElementById('contactChoice3').checked=true;
+		   }
+       }
+	
+	 
+	 $destfrom = $('#destfrom');
+    $airdestfrom = $('#airdestfrom');
+	
+	$destfrom.change(function() {
+    
+    $airdestfrom.html(''); // Clear existing options in second dropdown
+    var select = document.getElementById("airdestfrom");
+	var value = document.getElementById("destfrom").value;
+	
+	if(value != ''){
+	
+	<% for(var i=0; i < airport.objAirport.length; i++){ %>
+	     if(value == '<%= airport.objAirport[i].country %>' && '<%= airport.objAirport[i].type %>' == "Airports" 
+		 && '<%= airport.objAirport[i].name %>' != ""){
+		 
+            var el = document.createElement("option");
+            el.textContent = '<%= airport.objAirport[i].name %>';
+            el.value = '<%= airport.objAirport[i].name %>';
+            select.appendChild(el);
+	     }
+		
+    <%}%> 
+	sortSelect(document.getElementById("airdestfrom"), 'text', 'asc');
+	if('<%= jobassignment.airdestfrom %>'!=""){
+		   $('#airdestfrom').val('<%= jobassignment.airdestfrom %>');
+		}
+	}	
+	else{
+	
+	        var el = document.createElement("option");
+            el.textContent = 'Select';
+            el.value = '';
+            select.appendChild(el);
+	}
+    }).change();	
+	
+	
+	$destto = $('#destto');
+    $airdestto = $('#airdestto');
+	
+	$destto.change(function() {
+    
+    $airdestto.html(''); // Clear existing options in second dropdown
+    var select = document.getElementById("airdestto");
+	var value = document.getElementById("destto").value;
+	
+	if(value != ''){
+	
+	<% for(var i=0; i < airport.objAirport.length; i++){ %>
+	     if(value == '<%= airport.objAirport[i].country %>' && '<%= airport.objAirport[i].type %>' == "Airports" 
+		 && '<%= airport.objAirport[i].name %>' != ""){
+		 
+            var el = document.createElement("option");
+            el.textContent = '<%= airport.objAirport[i].name %>';
+            el.value = '<%= airport.objAirport[i].name %>';
+            select.appendChild(el);
+	     }
+		
+    <%}%> 
+	sortSelect(document.getElementById("airdestto"), 'text', 'asc');
+	if('<%= jobassignment.airdestto %>'!=""){
+		   $('#airdestto').val('<%= jobassignment.airdestto %>');
+		}
+	}	
+	else{
+	
+	        var el = document.createElement("option");
+            el.textContent = 'Select';
+            el.value = '';
+            select.appendChild(el);
+	}
+    }).change();	
+
+    $('#editjobassignment').bootstrapValidator({
+        container: '#messages',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+           
+        }
+    });
+});
+   
+var sortSelect = function (select, attr, order) {
+    if(attr === 'text'){
+        if(order === 'asc'){
+            $(select).html($(select).children('option').sort(function (x, y) {
+                return $(x).text().toUpperCase() < $(y).text().toUpperCase() ? -1 : 1;
+            }));
+            $(select).get(0).selectedIndex = 0;
+            
+        }// end asc
+        if(order === 'desc'){
+            $(select).html($(select).children('option').sort(function (y, x) {
+                return $(x).text().toUpperCase() < $(y).text().toUpperCase() ? -1 : 1;
+            }));
+            $(select).get(0).selectedIndex = 0;
+            e.preventDefault();
+        }// end desc
+    }
+
+};
+
+function addWorkDays(startDate, days) {
+    // Get the day of the week as a number (0 = Sunday, 1 = Monday, .... 6 = Saturday)
+    var dow = startDate.getDay();
+    var daysToAdd = parseInt(days);
+    // If the current day is Sunday add one day
+    if (dow == 0)
+        daysToAdd++;
+    // If the start date plus the additional days falls on or after the closest Saturday calculate weekends
+    if (dow + daysToAdd >= 6) {
+        //Subtract days in current working week from work days
+        var remainingWorkDays = daysToAdd - (5 - dow);
+        //Add current working week's weekend
+        daysToAdd += 2;
+        if (remainingWorkDays > 5) {
+            //Add two days for each working week by calculating how many weeks are included
+            daysToAdd += 2 * Math.floor(remainingWorkDays / 5);
+            //Exclude final weekend if remainingWorkDays resolves to an exact number of weeks
+            if (remainingWorkDays % 5 == 0)
+                daysToAdd -= 2;
+        }
+    }
+    startDate.setDate(startDate.getDate() + daysToAdd);
+    return startDate;
+}
+
+</script> 
+<script src="/javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/chartist.min.js"></script>
+<script src="/javascripts/bootstrap-notify.js"></script>
+<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<script src="/javascripts/light-bootstrap-dashboard.js?v=1.4.0"></script>     

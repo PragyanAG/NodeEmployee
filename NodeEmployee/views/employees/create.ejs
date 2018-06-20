@@ -1,0 +1,595 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    <link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+	<link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+	 <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="/stylesheets/animate.min.css" rel="stylesheet"/>
+    <link href="/stylesheets/main.css" rel="stylesheet" />
+	
+	
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image/image/sidebar-5.jpg>
+		      <div class="sidebar-wrapper">
+		
+
+                    <div class="logo">
+                        <a target="_blank" href="http://www.safe-lanes.com" class="simple-text">
+                             <img src="/images/SafeLanes_logo.png" class="imgclass" />
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li>
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+					    
+						<li class="active">
+                            <a href="/employees">
+                               <p>Employee Master</p>
+                            </a>
+                        </li>
+						
+                        <li>
+                            <a href="/vdranalysiss">
+                                <p>VDR Job Tracker</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/jobassignments">
+                               <p>Vessel Job Tracker</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/clients">
+                               <p>Client Details</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/observationanalysis">
+                               <p>Observation Analysis</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+           
+        </div>
+        
+ <div class="main-panel" data-color="orange" >
+        <nav class="navbar navbar-default navbar-fixed" >
+            <div class="container-fluid">
+	    <!--added new -->
+	    	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+	   <!--added new -->
+                <div  align="right">
+                   <a href="">Account</a>
+                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                   <a href="#">Log out</a>
+                </div>
+            </div>
+			
+		</nav>
+			
+		
+	
+     
+            
+           <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h5><a href="/employees">Employee List</a></h5>
+                                   <h5>Create New Employee</h5>
+                                       
+							</div>	   
+							<div class="content">
+                              <form id ="createemp" action="/employees/save" enctype="multipart/form-data" method="post" >
+							  <input id="id1" type="hidden" name="id1" value=""/>
+							  <input id="id2" type="hidden" name="id2" value=""/>
+							  <input id="id3" type="hidden" name="id3" value=""/>
+                                <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>First Name *</label>
+                                                 <input type="text" class="form-control" placeholder="First Name" name="firstname" id="firstname">
+									   </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Last Name</label>
+                                                <input type="text" class="form-control" placeholder="Last Name" name="lastname" id="lastname">
+                                      </div>
+                                   </div>
+                                </div>
+                                
+								<div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>DOB </label>
+                                                <input type="date" class="form-control" placeholder="Date Of Birth" name="dateofbirth" id="dateofbirth">
+                                            </div>
+                                        </div>
+										 <div class="col-md-4">
+                                             <div class="form-group">
+                                                <label>Address</label>
+                                                <input type="text" class="form-control" placeholder="Home Address" name="address" id="address">
+                                            </div>
+                                        </div>
+								</div>
+								
+								<div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Postal Code </label>
+                                                <input type="text" class="form-control" placeholder="Postal Code" name="postalcode" id="postalcode">
+                                            </div>
+                                        </div>
+										<div class="col-md-4">
+                                          <div class="form-group">
+                                           <label>Nationality </label>
+                                                <select name="nationality" class="form-control" id="nationality">
+												 <option value=''>Select Nationality</li>
+								                 <% for(var i=0; i < nationality.objNat.length; i++){ %>
+								                   <option value='<%= nationality.objNat[i] %>'><%= nationality.objNat[i] %></li>
+                                                   <% } %>
+								                </select>
+                                      </div>
+                                   </div>
+								</div>
+								
+								<div class="row">
+										<div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Country</label>
+                                                  <select name="country" class="form-control" id="country">
+												  <option value=''>Select Country</li>
+								                   <% for(var i=0; i < country.length; i++){ %>
+												        <option value='<%= country[i] %>'><%= country[i] %></li>
+                                                   <% } %>
+							                      </select>
+									   </div>
+                                   </div>
+								   <div class="col-md-4">
+									 <div class="form-group">
+                                           <label>City </label>
+                                                  <select name="city" class="form-control" id="city">
+								                   
+							                      </select>
+									   </div>
+                                   </div>	
+                                </div>
+								
+								
+								 <div class="row">
+                                       
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Gender</label>
+                                               
+												 <input type="checkbox" 
+												   name="gender" value="female" onclick="selectgender(this)" />
+												  <label>Female</label>
+
+												  <input type="checkbox" 
+												   name="gender" value="male" onclick="selectgender(this)" />
+												  <label>Male</label>
+                                            </div>
+                                        </div>
+										 <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Office Location</label>
+                                                <select name="office" class="form-control" id="office">
+												 <% for(var i=0; i < office.length; i++){ %>
+								                   <option value='<%= office[i].name %>'><%= office[i].name %></li>
+                                                   <% } %>
+								                </select>
+											</div>
+                                        </div>
+									
+                                </div>			
+								
+                                <div class="row">
+                                       
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Passport/IC No *</label>
+                                                <input type="text" class="form-control" placeholder="Passport Number" name="passportno" id="passportno">
+                                            </div>
+                                        </div>
+										 <div class="col-md-4">
+                                             <div class="form-group">
+                                                <label>Date Of Joining</label>
+                                                <input type="date" class="form-control" placeholder="Date Of Joining" name="dateofjoining" id="dateofjoining">
+                                            </div>
+                                        </div>
+									
+                                </div>										
+									
+                                                              								   
+								
+                                      
+          
+			                     <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Designation </label>
+												<input type="text" class="form-control" placeholder="Designation" name="designation" id="designation">
+                                            </div>
+                                        </div>
+										<div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>WorkPermit Status </label>
+												<input type="text" class="form-control" placeholder="WorkPermit Status" name="permitstatus" id="permitstatus">
+                                            </div>
+                                        </div>
+								 </div>
+								  <div class="row">
+                                  
+									 <div class="col-md-6">
+										  <div class="form-group">
+											   <label>Employement Type </label>
+													 
+											 <div>
+												  <input type="radio" id="emptype1"
+												   name="emptype" value="permanent">
+												  <label for="emptype1">Permanent</label>
+
+												  <input type="radio" id="emptype2"
+												   name="emptype" value="contract">
+												  <label for="emptype2">Contract</label>
+
+												 </div>
+											
+
+										   </div>
+									   </div>
+								   </div>
+								 
+								  <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Marital Status </label>
+												 <div><input type="checkbox"
+												   name="maritalstatus" value="Married" onclick="selectmaritalstatus(this)" />
+												  <label>Married</label>
+												  <input type="checkbox" 
+												   name="maritalstatus" value="Unmarried" onclick="selectmaritalstatus(this)" />
+												  <label>Unmarried</label>
+												  <input type="checkbox" 
+												   name="maritalstatus" value="Divorced" onclick="selectmaritalstatus(this)" />
+												  <label>Divorced</label>
+												  <input type="checkbox" 
+												   name="maritalstatus" value="Separated" onclick="selectmaritalstatus(this)" />
+												  <label>Separated</label>
+												  <input type="checkbox" 
+												   name="maritalstatus" value="Widow" onclick="selectmaritalstatus(this)" />
+												  <label>Widow</label>
+												  <input type="checkbox" 
+												   name="maritalstatus" value="Registerd Partnership" onclick="selectmaritalstatus(this)" />
+												  <label>Registerd Partnership</label></div>                                            </div>
+                                        </div>
+										
+								 </div>
+								 <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label>Comments</label>
+                                                <textarea rows="5" class="form-control" placeholder="Here can be your description" name="comment" id="comment"></textarea>
+                                            </div>
+                                        </div>
+                                 </div>
+	                            <div class="row">
+								    <div class="col-md-4">
+						               <div class="form-group">
+                                           <label>Upload Photo of Employee</label>
+                                           <input type="file" class="form-control-file" name="photo" id="photo" accept=".jpg,.jpeg,.png" onchange="validateFileType(this)"/>
+										   
+										   
+                                       </div>
+									</div>
+									
+									
+										   
+										   
+                                      
+						        </div>
+			                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Father Name </label>
+                                                <input type="text" class="form-control" placeholder="Father Name" name="fathername" id="fathername">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Mother Name </label>
+                                                <input type="text" class="form-control" placeholder="Mother Name" name="mothername" id="mothername">
+                                            </div>
+                                        </div>
+                                </div>			
+			                     <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Spouse Name </label>
+                                                <input type="text" class="form-control" placeholder="Spouse Name" name="spousename" id="spousename">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>No Of Kids </label>
+                                                <input type="number" class="form-control" placeholder="Number of kids" name="noofkids" id="noofkids">
+                                            </div>
+                                        </div>
+										
+										
+										
+										
+                                </div>	
+								
+								 <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+											
+                                                <label>Main Contact No </label>
+											    <div>
+												 <select name="mcountry_code" class="form-phone" id="mcountry_code">
+												  <% for(var i=0; i < phonecode.length; i++){ %>
+								                 <option value='<%= phonecode[i].code %>(<%= phonecode[i].dial_code %>)'><%= phonecode[i].code %>(<%= phonecode[i].dial_code %>)</li>
+                                                 <% } %>
+                                                </select>
+                                                <input type="text" class="form-phone1" placeholder="Main Contact number" name="mcontactno" id="mcontactno">
+                                             </div>
+                                        </div>
+										</div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Emergency Contact No </label>
+												<div>
+												 <select name="ecountry_code" class="form-phone" id="ecountry_code">
+												  <% for(var i=0; i < phonecode.length; i++){ %>
+								                 <option value='<%= phonecode[i].code %>(<%= phonecode[i].dial_code %>)'><%= phonecode[i].code %>(<%= phonecode[i].dial_code %>)</li>
+                                                 <% } %>
+                                                </select>
+                                                <input type="text" class="form-phone1" placeholder="Emergency Contact number" name="econtactno" id="econtactno">
+                                            </div>
+                                        </div>
+										</div>
+										
+										
+                                </div>	
+								
+								 <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Have you previously worked for Safe Lanes </label>
+												 <div><input type="checkbox"
+												   name="workstatus" value="Yes" onclick="selectworkstatus(this)" />
+												  <label>Yes</label>
+												  <input type="checkbox" 
+												   name="workstatus" value="Job Title" onclick="selectworkstatus(this)" />
+												  <label>Job Title</label>
+												  <input type="checkbox" 
+												   name="workstatus" value="Employee" onclick="selectworkstatus(this)" />
+												  <label>Employee</label>
+												  <input type="checkbox" 
+												   name="workstatus" value="Fixed Term Employee" onclick="selectworkstatus(this)" />
+												  <label>Fixed Term Employee</label>
+												  <input type="checkbox" 
+												   name="workstatus" value="Contractor/Temp" onclick="selectworkstatus(this)" />
+												  <label>Contractor/Temp</label>
+												  <input type="checkbox" 
+												   name="workstatus" value="No" onclick="selectworkstatus(this)" />
+												  <label>No</label></div>                                            </div>
+                                        </div>
+										
+								 </div>
+								  <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Can you provide your former ID Number </label>
+                                                <input type="text" class="form-control" placeholder="former ID Number" name="fidno" id="fidno">
+                                            </div>
+                                        </div>
+                                       
+										
+										
+                                </div>	
+							<button type="submit" class="btn btn-info btn-fill pull-right">Save</button>
+							<div class="clearfix"></div>
+						  		
+                            </form>
+                          </div>
+                       </div>
+                    </div>
+			    </div>
+				</div>
+				</div>
+				</div>
+				
+
+  </body>
+</html>
+
+
+<script type="text/javascript">
+
+
+    function selectworkstatus(id){
+	  var chkworkstatus = document.getElementsByName("workstatus");
+	  Array.prototype.forEach.call(chkworkstatus,function(el){
+		el.checked = false;
+	  });
+	  id.checked = true;
+    }
+	 function selectgender(id){
+	  var chkgender = document.getElementsByName("gender");
+	  Array.prototype.forEach.call(chkgender,function(el){
+		el.checked = false;
+	  });
+	  id.checked = true;
+    }
+	 function selectmaritalstatus(id){
+	  var chkmaritalstatus = document.getElementsByName("maritalstatus");
+	  Array.prototype.forEach.call(chkmaritalstatus,function(el){
+		el.checked = false;
+	  });
+	  id.checked = true;
+    }
+      
+    function validateFileType(){
+	
+        var fileName = document.getElementById("photo").value;
+        var idxDot = fileName.lastIndexOf(".") + 1;
+        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+            //TO DO
+        }else{
+            alert("Only jpg/jpeg and png files are allowed!");
+        }   
+    }
+    
+	var uploadField = document.getElementById("photo");
+
+    uploadField.onchange = function() {
+		if(this.files[0].size > 2097152){
+		   alert("File is too big!");
+		   this.value = "";
+		};
+    };
+	
+	
+jQuery( document ).ready(function( $ ) {
+	
+	$country = $('#country');
+    $city = $('#city');
+	
+	$country.change(function() {
+    
+    $city.html(''); // Clear existing options in second dropdown
+	
+	 
+     var country_name = document.getElementById("country").value;
+	 if(country_name != ''){
+	 
+        $.ajax({
+          method: "GET",
+          url: "/employees/returncity",
+          data: { country_name: country_name },
+		  dataType: "json",
+        }).done(function( data ) {
+          var result = data;
+		  
+            $.each(result, function (data) {
+            var appenddata = "<option value = '" + result[data] + " '>" + result[data] + " </option>";
+            $('#city').html($('#city').html() + appenddata);
+             });
+           sortSelect(document.getElementById("city"), 'text', 'asc'); 
+      });
+	  }
+	  else
+	 {
+	   $('#city').append($('<option>', {
+			value: '',
+			text: 'Select City'
+		}));
+		
+	 }
+	
+	
+    }).change();
+	
+});
+	
+    $('#createemp').bootstrapValidator({
+        container: '#messages',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            firstname: {
+                validators: {
+                    notEmpty: {
+                        message: ''
+                    }
+                }
+            },
+            
+			
+            passportno: {
+                validators: {
+                    notEmpty: {
+                        message: ''
+                    }
+                }
+            }
+			
+        }
+    });
+
+
+var sortSelect = function (select, attr, order) {
+    if(attr === 'text'){
+        if(order === 'asc'){
+            $(select).html($(select).children('option').sort(function (x, y) {
+                return $(x).text().toUpperCase() < $(y).text().toUpperCase() ? -1 : 1;
+            }));
+            $(select).get(0).selectedIndex = 0;
+            
+        }// end asc
+        if(order === 'desc'){
+            $(select).html($(select).children('option').sort(function (y, x) {
+                return $(x).text().toUpperCase() < $(y).text().toUpperCase() ? -1 : 1;
+            }));
+            $(select).get(0).selectedIndex = 0;
+            e.preventDefault();
+        }// end desc
+    }
+
+};
+</script>
+<script src="/javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/chartist.min.js"></script>
+<script src="/javascripts/bootstrap-notify.js"></script>
+<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<script src="/javascripts/light-bootstrap-dashboard.js?v=1.4.0"></script>
+

@@ -1,0 +1,353 @@
+
+.brd, .redText, #hpos_aboutContent, .spaceR7, .spacer7x7, .spacer250x7, .spacer1x20, .hpos_mdbutton, input.hpos_small, .helpLbrd  	
+{
+font-family:Arial,sans-serif;
+font-size:100%;
+}
+
+/*==============repeat======================*/
+/*  avoid styling the span tag wrt any font settings.  */
+body textarea  {
+	font-family:Arial,sans-serif;
+	font-size:100%;
+}
+
+
+
+/*=======================end repeat==============*/
+
+
+.brd {
+	border-top-width: 0px;
+	border-right-width: 5px;
+	border-bottom-width: 5px;
+	border-left-width: 5px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFFFFF;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	padding:5px 7px 1px 7px;
+
+}
+
+/* Error Message*/
+
+.redText {color: #CC0000}
+
+/*==========Error message (DIV) spacing==============*/
+
+#hpos_divUserMessage{
+margin-bottom:7px;
+}
+
+/*==========About page==============*/
+
+.hpos_aboutContent{
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top:10px;
+	text-align: justify;
+
+}
+
+/*==========Login template page==============*/
+
+
+h1.hpos_loginTitle
+{
+color:#FFFFFF;
+font-size:200%;
+}
+/*==============Set width to scrolling table to avoid H-scroll */
+
+#tblJobListing
+{
+width:98.5%;
+}
+#tblDomainGroupList
+{
+width:99.5%; 
+}
+#tblQueryGroupList
+{
+width:99.5%;
+}
+
+/*==============Set hight to scrolling table  
+
+#tblAttList_scrollingTableDiv
+{
+height:105px;
+}
+#tblAttList_scrollingTableDiv
+{
+height:70px;
+}
+*/
+/*=================== Spacing =================*/
+.spaceR7{
+margin-right:7px;
+}
+
+.spacer7x7 {
+	height: 7px;
+	width: 7px;
+}
+
+.spacer100x7 {
+	height: 100%;
+	width: 7px;
+}
+
+.spacer250x7 {
+	height: 7px;
+	width:235px;
+}
+
+.spacer1x75
+{
+	height: 1px;
+	width:75px;
+
+}
+.spacer1x20
+{
+	height: 1px;
+	width:20px;
+
+}
+
+
+.spacer1x175
+{
+	height: 1px;
+	width:175px;
+
+}
+.spacer1x150
+{
+	height: 1px;
+	width:150px;
+
+}
+
+
+/*==========Tree border overwrite====================*/
+
+div.treeWrapper {	
+	background:#fff;
+	padding:2px;
+	margin:0px;
+	overflow:auto;
+	border:0px solid #fff;
+}
+
+/* -------------------------------------  */
+/*  TREE - INSETS FOR VARIOUS LEVELS OF NESTING */
+/* -------------------------------------  */
+/* over-write of Default.css*/
+
+div.treeOpen,div.treeOpenSelected,
+div.treeClosed,div.treeClosedSelected {
+width:auto;
+margin:0px;
+}
+
+
+
+
+
+
+/*========================customize Controls==================*/
+/* Button Style */
+.hpos_mdbutton
+{
+width:85px;
+}
+
+/* Text box Style */
+
+input.hpos_small {
+	width:75px;
+}
+
+/*=================Help Content===============*/
+.helpLbrd
+{
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 5px;
+	border-left-width: 5px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	
+
+}
+
+
+
+/*--------------------------------------------
+Set 100% Height for the 'Domain Tree' 
+----------------------------------------------*/
+#treeJTDomains{
+min-height:97%;
+margin-top:0px;
+height:100px;
+background-color:#FFF;
+}
+
+* html #treeJTDomains{height:100%;}
+html>body #minHeight1{float:left;width:0px;height:100%;margin-top:0px;} 
+
+/*--------------------------------------------*/
+
+/*--------------------------------------------
+Set 100% Height for the 'Query Tree' 
+----------------------------------------------*/
+#treeJTQuery{
+min-height:100%;
+margin-top:0px;
+height:100px;
+background-color:#FFF;
+}
+
+* html #treeJTQuery{height:100%;}
+html>body #minHeight2{float:left;width:0px;height:100%;margin-top:0px;} 
+
+
+/*==============End Tree Style============*/
+
+
+#divProHelpContent
+{
+	padding-top:10px;
+	text-align: justify;
+	overflow:auto;
+
+}
+
+
+.hpos_helpContent
+{
+	margin-left:20px;
+	margin-right:20px;
+	margin-bottom:5px;
+	margin-top:10px;
+	text-align: justify;
+
+}
+
+
+/*-------------------End Help-------------------*/
+/*----------------------------------------------------
+Collins CSS
+----------------------------------------*/
+/*==============Set width to scrolling table to avoid H-scroll */
+
+.searchpnlBRD {
+	width: 100%;
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 3px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #FFFFFF;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #A6A6A6;
+	border-left-color: #CCCCCC;
+
+}
+
+
+#tblLSListing
+{
+width:100%;
+}
+#tblSPCListing
+{
+width:100%; 
+}
+
+#tblDVListing
+{
+width:100%;
+}
+
+#tblDPWListing
+{
+width:100%;
+}
+
+.style1 {color: #FFFFFF}
+
+#tblDisplayList td 
+{
+padding:0px 5px;
+}
+.noBorderTxtBox
+{
+border:1 solid #ccc;
+color:#666666
+}
+
+
+.style2 {color: #FF0000}
+.style3 {color: #333333}
+.redText{color: #990000}
+
+/*==============tool tip=======================*/
+#tooltip{
+	visibility: hidden;
+	position: absolute;
+	left: -300px;
+	border: 1px solid #999;
+	padding: 2px 4px 4px 4px;
+	background-color: #efefef;
+	z-index: 100;
+	white-space: nowrap;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#cccccc',direction='135',strength='2');
+}
+
+.groupBg
+{
+background-color:#EEE;
+border:1 solid #CCC;
+font-weight:bold;
+}
+
+
+/* classes for operations workflow */
+
+#imageWrap { height:150px; width:200px; margin-left:5px; }
+
+#leftCol { float:left; width:76px; height:50px; margin-top:50px; margin-bottom:50px; }
+
+#connectorCol { float:left; width:43px; margin-top:22px; height:150px; }
+
+#rightCol { float:left; width:76px; height:150px; }
+
+.leftItems { display:block; height:50px; width:76px; }
+
+.connector1 { display:block; margin-bottom:10px; width:43px; height:39px; }
+
+.connector2 { display:block; margin-bottom:10px; width:43px; height:9px;}
+
+.connector3 { display:block; margin-bottom:10px; width:43px; height:39px;}
+
+.rightItems { display:block; height:50px; width:76px; margin-bottom:2px; }
+
+.clear { clear:both; }

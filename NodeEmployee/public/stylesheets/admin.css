@@ -1,0 +1,1122 @@
+input,select{
+  margin:0;
+  padding:0;
+}
+body{
+	background-color: #FFFFFF;
+	margin-left:0px;
+	margin-right:0;
+	margin-top:0;
+	margin:0;
+	font-family: arial;
+	font-size: 8px;
+	padding:0px;
+    border:0px;  
+    border-spacing:0px;
+}
+.mainbody{
+	padding-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	background-color: #FFFFFF;
+}
+.logbox{
+	background: #DDDFE2;
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	padding: 8px;
+}
+.commontext {
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+}
+.borderright{
+    border-style: solid;
+    border-color: #666666;
+    border-width: 1 1 1 1;
+    background-color: #DEDEDE;
+}
+
+.formfielddisabled {
+    font-family: arial;FONT-SIZE: 8pt;
+     background-color: 888888;
+    color:#red;border-width: 1px;border-style:
+
+    thin;border-color:#333333;
+}
+.formfield {
+    font-family: arial;FONT-SIZE: 8pt;
+    color:#000000;border-width: 1px;border-style:
+    thin;border-color:#333333;
+}
+A:link {
+	color: #000000;
+	text-decoration: none;
+	}
+A:visited {
+	color: #000000;
+	text-decoration: none;
+	}
+A:active {
+	color: #000000;
+	text-decoration: none;
+	}
+A:hover {
+	color: #003366;
+	text-decoration: underline;
+		}
+.b:link {
+COLOR: #FFFFFF; TEXT-DECORATION: none;
+}
+.b:visited {
+COLOR: #FFFFFF; TEXT-DECORATION: none;
+}
+.b:active {
+COLOR: #FFFFFF; TEXT-DECORATION: none;
+}
+.b:hover {
+COLOR: #FFFFFF;  TEXT-DECORATION: underline;
+}
+.headerelements_kpi{
+	font-family: arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: left;
+}
+.formbuttonsmall {
+    font-family: Arial;FONT-SIZE: 8pt;
+    color:#000000;border-width: 1px;border-style:
+    thin;border-color:#333333;width:20;height:18;
+}
+.formbutton {
+    font-family: Arial;FONT-SIZE: 8pt;
+    color:#000000;border-width: 1px;border-style:
+    thin;border-color:#333333;width:85;
+}
+.copyright {
+	font-family: arial;
+	font-size: 8pt;
+	text-align: right;
+	color: #FFFFFF;
+}
+.Menubg{
+		background: #666666;
+		font-family: arial;
+		color: White;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10pt;
+		padding: 4px;
+	}
+	.links{
+	background: #CCCCCC;
+		font-family: arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 8pt;
+		padding: 4px;
+	}
+    .toplinks{
+		font-family: arial;
+		font-size: 8pt;
+		font-weight: bold;
+		color: White;
+		text-align: center;
+}
+.toplinks1{
+		font-family: arial;
+		font-size: 8pt;
+		font-weight: bold;
+		color: White;
+
+}
+.tablehead{
+		background: #666666;
+		font-family: arial;
+		font-size: 10pt;
+		color: White;
+		text-align: left;
+	}
+.tabrow{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.tabrowLeft{
+	background:  #B8B8B8;
+	font-family: Arial;
+	font-size: 8pt;
+    color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+
+.tabrowHead{
+	background:  #B8B8B8;
+	font-family: Arial;
+	font-size: 8pt;
+    color: #000000;
+    font-weight: bold;
+	padding: 3px;
+	
+	}
+
+
+.tabrowcenter{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+
+.errorClass{
+	font-family: Arial;
+	font-size: 8pt;
+    color: #ff0000;
+	padding: 4px;
+	text-align: left;
+}
+
+.mandatoryFieldClass{
+	font-family: Arial;
+	font-size: 8pt;
+    color:  #ff0000;
+	padding: 4px;
+	text-align: left;
+}
+.mandatory{
+background:  #EEEEEE;
+	font-family: Arial;
+	font-size: 8pt;
+    color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.conf_butts	{
+ background: #999999;
+ padding: 4px;
+}
+.tabbg{
+	background: #EEEEEE;
+	padding: 10px;
+}
+
+    .headingtext{
+background: #CCCCCC;
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	padding: 5px;
+}
+.leftmenu{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding: 4px;
+}
+.admin_lock_tr_header{
+	background: #B8B8B8;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding:4px;
+}
+.admin_lock_th_header
+{
+	background: #666666;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+    text-align:center;
+}
+.admin_lock_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.admin_lock_table_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+.maintabbg{
+	background: #EEEEEE;
+}
+.tabpadding{
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	background-color: #EEEEEE;
+}
+sg_create_table_header{
+ background: #CCCCCC;
+ font-family: arial;
+ font-size: 8pt;
+ font-weight: bold;
+ color: #000000;
+ padding:4px;
+}
+
+.sg_create_table_data{
+ background: #CCCCCC;
+ font-family: arial;
+ font-size: 8pt;
+ color: #000000;
+ padding: 4px;
+ text-align: center;
+}
+.sg_create_header
+{
+ background: #666666;
+ font-family: arial;
+ font-size: 8pt;
+ font-weight: bold;
+ color: White;
+ padding:4px;
+    text-align:left;
+}
+
+.sg_activate_header
+{
+ background: #666666;
+ font-family: arial;
+ font-size: 8pt;
+ font-weight: bold;
+ color: White;
+ padding:4px;
+}
+
+.sg_deactivate_header
+{
+ background: #666666;
+ font-family: arial;
+ font-size: 8pt;
+ font-weight: bold;
+ color: White;
+ padding:4px;
+}
+
+.sg_delete_header
+{
+ background: #666666;
+ font-family: arial;
+ font-size: 8pt;
+ font-weight: bold;
+ color: White;
+ padding:4px;
+}
+
+.sg_modify_header
+{
+ background: #666666;
+ font-family: arial;
+ font-size: 8pt;
+ font-weight: bold;
+ color: White;
+ padding:4px;
+}
+
+.sg_track_header
+{
+ background: #666666;
+ font-family: arial;
+ font-size: 8pt;
+ font-weight: bold;
+ color: White;
+ padding:4px;
+}
+.sg_tr_header{
+	background: #999999;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: white;
+	padding:4px;
+
+}
+.partner_regn_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.sg_form_label{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+.partner_regn_th_header
+{
+	background: #666666;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+}
+.partner_regn_tr_header{
+	background: #999999;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+}
+
+.error_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.regfailure_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.regSuccess_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.parter_delete_head_tr{
+    background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding:4px;
+}
+.parter_delete_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.partner_detail_head_tr{
+	background: #999999;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+}
+.partner_detail_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+
+
+
+.partner_list_head_tr{
+	background: #999999;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+}
+.partner_list_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.partner_approved_head_tr{
+	background: #999999;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+}
+.partner_approved_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+
+
+.partner_detail_attb_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.partner_detail_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.partner_rejected_head_tr{
+	background: #999999;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+}
+.partner_rejected_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+.partner_approve_list_head_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding:4px;
+}
+.partner_approve_list_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.parter_approved_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.admin_deactivate_tr_header{
+	background: #B8B8B8;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding:4px;
+}
+.admin_deactivate_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.admin_deactivate_table_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+
+.admin_deactivate_table_td_expired{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: red;
+	padding: 4px;
+	text-align: center;
+}
+.admin_deactivate_th_header
+{
+	background: #666666;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+    text-align:left;
+}
+
+.admin_delete_tr_header{
+	background: #B8B8B8;;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding:4px;
+}
+.admin_delete_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.admin_delete_table_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+.admin_delete_th_header
+{
+	background: #666666;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+    text-align:left;
+}
+.admin_approve_tr_header{
+	background: #B8B8B8;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding:4px;
+}
+.admin_approve_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.admin_approve_table_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+.admin_approve_th_header
+{
+	background: #666666;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+    text-align:left;
+}
+
+.admin_regn_tr_header{
+	background: #999999;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+}
+.admin_regn_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.admin_regn_table_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+.admin_regn_th_header
+{
+	background: #666666;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+    text-align:left;
+}
+.admin_activate_tr_header{
+	background: #B8B8B8;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding:4px;
+}
+.admin_activate_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+.admin_activate_table_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+.admin_activate_th_header
+{
+	background: #666666;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+    text-align:left;
+}
+.admin_test_table_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+.admin_test_tr_header{
+	background: #999999;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+}
+.admin_test_th_header
+{
+	background: #666666;
+	font-family: Arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+    text-align: left;
+}
+.admin_test_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+}
+
+.admin_table_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+    text-align: center;
+}
+
+.admin_test_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+    font-weight: bold;
+	color: #000000;
+	padding: 4px;
+    text-align: center;
+}
+.admin_table_tr{
+	background: #B8B8B8;
+	font-family: arial;
+	font-size: 8pt;
+    font-weight: bold;
+	color: #000000;
+	padding: 4px;
+    text-align: center;
+}
+
+.admin_test_back{
+	background: #666666;
+}
+.admin_test_head{
+	background: #999999;
+}
+.partner_all_list_head_top
+{
+	background: #666666;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+    text-align:left;
+}
+.sg_head_tr{
+	background: #999999;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+}
+
+.sg_list_head_tr{
+	background: #999999;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+}
+
+.sg_sub_header{
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding:4px;
+}
+.sg_note{
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding:4px;
+}
+.sg_table_header{
+	background: #999999;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding:4px;
+}
+.tabhead{
+	background: #666666;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+}
+.tabheadthin{
+	background: #666666;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: normal;
+	color: White;
+	padding:0px;
+}
+.sg_table_data{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+
+.tableback{
+	background: #666666;
+	}
+.place{
+  text-align: left;
+  font-size: 8pt;
+  font-family: arial;
+  font-weight: bold;
+  color: #000000;
+}
+.sg_header
+{
+	background: #666666;
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	padding:4px;
+    text-align:left;
+}
+.pagebanner
+{
+font-family: arial;
+	font-size: 8pt;
+	color: White;
+	padding:4px;
+	height: 10px;
+}
+.confpad
+{
+	background: transparent;
+	font-family: Arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding: 4px;
+}
+.pagelinks{
+  text-align: center;
+  font-size: 8pt;
+  font-family: arial;
+  font-weight: bold;
+
+
+}
+.back	{
+font-family: arial;
+font-size: 8pt;
+ background: #999999;
+ padding: 4px;
+}
+.admin_report_tr_header{
+	background: #B8B8B8;
+	font-family: Arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	padding:4px;
+}
+.admin_report_table_td{
+    background: #CCCCCC;
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+
+.partner_regn_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+}
+
+.partner_approved_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+}
+
+.partner_approved_attb_td{
+	background:  #B8B8B8;
+	font-family: Arial;
+	font-size: 8pt;
+    color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+
+
+.partner_rejected_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+}
+
+.partner_rejected_attb_td{
+	background:  #B8B8B8;
+	font-family: Arial;
+	font-size: 8pt;
+    color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+
+.partner_list_td{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+}
+
+.partner_list_attb_td{
+	background:  #B8B8B8;
+	font-family: Arial;
+	font-size: 8pt;
+    color: #000000;
+	padding: 4px;
+	text-align: left;
+}
+
+.partner_all_list_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+    text-align: center;
+}
+
+
+.partner_all_list_head_tr{
+	background: #968F89;
+	font-family:Arial,sans-serif;
+	font-weight:bold;
+	text-align:left;
+	vertical-align:top;
+	padding:3px 5px 2px 5px;
+	color:#fff;	
+}
+
+.partner_enbdisb_tr{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: #000000;
+	padding: 4px;
+    text-align: center;
+}
+
+
+.partner_enbdisb_head_tr{
+	background: #B8B8B8;
+	font-family: arial;
+	font-size: 8pt;
+    font-weight: bold;
+	color: #000000;
+	padding: 4px;
+    text-align: center;
+}
+
+.rowTitleHead{
+	background: #B8B8B8;
+	font-family: arial;
+	font-size: 8pt;
+   	color: #000000;
+	padding: 4px;
+    text-align: left;
+}
+
+.errorBold
+{
+	background: transparent;
+	font-family: Arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #ff0000;
+	padding: 4px;
+}
+
+.errorNormal
+{
+	background: transparent;
+	font-family: Arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #ff0000;
+	padding: 4px;
+}
+.lockPeriodExp
+{
+	color:red;
+	font-weight:bold;
+}
+.wsdl_lbl{
+	background: #CCCCCC;
+	font-family: arial;
+	font-size: 8pt;
+	color: blue;
+	padding: 4px;
+	text-align: left;
+	font-weight:bold;
+}
+.tableClass{
+	width: 100%;
+}
+.commontextbold {
+	font-family: arial;
+	font-size: 12pt;
+	font-weight:bold;
+	color: #000000;
+	padding: 4px;
+	text-align: center;
+}
+.formbuttonbig {
+    font-family: Arial;FONT-SIZE: 8pt;
+    color:#000000;border-width: 1px;border-style:
+    thin;border-color:#333333;width:110;
+}
+.partner_all_list_head_tr:link {
+   color : #003399; 
+}
+.even 
+{
+	font-family: arial;
+	font-size: 8pt;
+	text-align:left;
+	vertical-align:top;
+	padding:3px 5px 2px 5px;
+	color:#fff;
+	background-color:#EBEBEB;
+}
+.odd 
+{
+	font-family: arial;
+	font-size: 8pt;
+	text-align:left;
+	vertical-align:top;
+	padding:3px 5px 2px 5px;
+	color:#fff;
+	background-color:#F9F9F9;
+}
+.headerClass
+{
+	background-color:#968F89;
+	font-weight:bold;
+	text-align:left;
+	vertical-align:top;
+	padding:3px 5px 2px 5px;
+	color:#fff;	
+	border-right:1px solid #ccc;
+}

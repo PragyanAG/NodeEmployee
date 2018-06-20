@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+	
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	
+	<link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="/stylesheets/animate.min.css" rel="stylesheet"/>
+    <link href="/stylesheets/main.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image/image/sidebar-5.jpg>
+		      <div class="sidebar-wrapper">
+		
+                    <div class="logo">
+                        <a target="_blank" href="http://www.safe-lanes.com" class="simple-text">
+                             <img src="/images/SafeLanes_logo.png" class="imgclass" />
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li>
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+					  
+						<li>
+                            <a href="/employees">
+                               <p>Employee Master</p>
+                            </a>
+                        </li>
+						
+                        <li class="active">
+                            <a href="/vdranalysiss">
+                                <p>VDR Job Tracker</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/jobassignments">
+                               <p>Vessel Job Tracker</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/clients">
+                               <p>Client Details</p>
+                            </a>
+                        </li>
+						<li>
+                            <a href="/observationanalysis">
+                               <p>Observation Analysis</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+ <div class="main-panel" data-color="orange" >
+        <nav class="navbar navbar-default navbar-fixed" >
+            <div class="container-fluid">
+	    <!--added new -->
+	    	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+	   <!--added new -->
+                <div  align="right">
+                   <a href="">Account</a>
+                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                   <a href="#">Log out</a>
+                </div>
+            </div>
+			
+		</nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                            <h5><a href="/vdranalysiss">VDR Analysis List</a></h5>
+                            </div>
+                        <div class="content">
+						
+						<div class="row">
+                                  <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Company *</label>
+										  <input type="text" class="form-control" disabled value="<%= vdranalysis.company %>">												  
+                                      </div>
+                                   </div>
+                                    <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Vessel *</label>
+										   <input type="text" class="form-control" disabled value="<%= vdranalysis.vessel %>">
+										 </div>
+                                   </div>
+								   </div>
+							       <div class="row">
+                                   
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                          <label>VDR Make/Model </label>
+										  <input type="text" class="form-control" placeholder="VDR Make" disabled name="vdrmake" id="vdrmake" value="<%= vdranalysis.vdrmake %>">
+                                           
+                                      </div>
+                                   </div>
+								   
+								   							
+								   
+								
+                                <div class="col-md-6">
+                                      <div class="form-group">
+                                           <label>VDR Type </label>
+                                                 
+                                          <div>
+                                              <input type="radio" id="contactChoice1" name="contact" value="routineanalysis" disabled>
+                                              <label for="contactChoice1">Routine Analysis</label>
+
+                                              <input type="radio" id="contactChoice2" name="contact" value="incidentinvestigation" disabled>
+                                              <label for="contactChoice2">Incident Investigation</label>
+
+                                            </div> 
+                                         
+
+									   </div>
+                                   </div>
+								   </div>
+								 
+								   <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Analysis By </label>
+                                                <select name="analysis" class="form-control" disabled>
+												<option selected value='<%= vdranalysis.analysis_id %>'><%= vdranalysis.analysis %></option>
+								                
+												  </select>
+									   </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                            <label>Auditor </label>
+                                                 <select name="employeename" class="form-control" id="employeename" disabled>
+												 <option selected value='<%= vdranalysis.auditor_id %>'><%= vdranalysis.auditorname %></option>
+                                                   </select>
+                                      </div>
+                                   </div>
+                                 </div>
+								 
+							
+							      <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Data Received </label>
+                                                 <input type="date" class="form-control" disabled name="drcvclient" id="drcvclient" value="<%=vdranalysis.drcvclient%>">
+									   </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Documents Received </label>
+                                               <input type="date" class="form-control" disabled name="alldocrcvd" id="alldocrcvd" value="<%=vdranalysis.alldocrcvd%>">
+                                      </div>
+                                   </div>
+                                 </div>
+								 
+								 
+								 
+								 <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Date Data Sent </label>
+                                                 <input type="date" class="form-control" disabled placeholder="Date Data Sent" name="dtdatasent" id="dtdatasent" value="<%=vdranalysis.dtdatasent%>">
+									   </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Date Analysis Completed </label>
+                                               <input type="date" class="form-control" disabled placeholder="Date Analysis Completed" name="dtanacomp" id="dtanacomp" value="<%=vdranalysis.dtanacomp%>">
+                                      </div>
+                                   </div>
+                                 </div>
+								 
+								 <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Date Assigned </label>
+                                                 <input type="date" class="form-control" disabled placeholder="Date Assigned" name="dtassign" id="dtassign" value="<%=vdranalysis.dtassign%>">
+									   </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Date Delivered </label>
+                                               <input type="date" class="form-control" disabled placeholder="Date Delivered" name="dtdeliver" id="dtdeliver" value="<%=vdranalysis.dtdeliver%>">
+                                      </div>
+                                   </div>
+                                 </div>
+								 
+								 <div class="row">
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Date Completed </label>
+                                                 <input type="date" class="form-control" disabled placeholder="Date Completed" name="dtcomp" id="dtcomp" value="<%=vdranalysis.dtcomp%>">
+									   </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                      <div class="form-group">
+                                           <label>Due Date </label>
+                                               <input type="date" class="form-control" disabled placeholder="Due Date" readonly name="duedate" id="duedate" value="<%=vdranalysis.duedate%>">
+                                      </div>
+                                   </div>
+                                 </div>
+								 
+								 <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label>Remarks</label>
+                                                <textarea rows="3" class="form-control" placeholder="Remarks" name="remarks" id="remarks" disabled></textarea>
+                                            </div>
+                                        </div>
+                                 </div>
+								 
+								  <div class="row" >
+								    <div class="col-md-4">
+						               <div class="form-group">
+                                           <label>Upload SEQ</label>
+                                           <input type="file" class="form-control-file" disabled name="doc" id="doc"/>
+										</div>
+									</div>
+									<div class="col-md-4">
+						               <div class="form-group">
+                                           <label>Additional Documents</label>
+                                           <input type="file" class="form-control-file" disabled name="files[]" multiple/>
+										</div>
+									</div>
+						        </div>
+								
+								<div class="row">
+								 <div class="col-md-4">
+						               <div class="form-group">
+								              <% for(var i=0; i < listofdoc.length; i++){ %>
+											  <% if(listofdoc[i].typeofdoc == "SEQ") {%>
+				                                <a href="<%= listofdoc[i].filepath %>" target ="_blank"><%= listofdoc[i].document %></a></br> 
+                                             <%}}%>								 
+							           </div>
+								  </div>
+								  <div class="col-md-4">
+						               <div class="form-group">
+											  <% for(var i=0; i < listofdoc.length; i++){ %>
+											  <% if(listofdoc[i].typeofdoc != "SEQ") {%>
+				                               <a href="<%= listofdoc[i].filepath %>" target ="_blank"><%= listofdoc[i].document %></a></br> 
+                                             <%}}%>				 
+							           </div>
+								  </div>
+							    </div>
+								
+								 
+						        <h3><a id="edit12" href="/vdranalysiss/edit/<%= vdranalysis._id%>" class="btn btn-info btn-fill pull-right">EDIT</a></h3>
+                                <form action="/vdranalysiss/complete/<%= vdranalysis._id%>" method="post">
+                                <button type="submit" class="btn btn-info btn-fill pull-right" id="btnComplete" onclick="return confirm('Are you sure want to do?')">Complete VDR</button>
+							    <input id="btncancel" type="button" class="btn btn-info btn-fill pull-right" value ="Cancel VDR"/>
+						       <div class="clearfix"></div>
+						</div>
+						   </form>
+                            </div>
+                       </div>
+                    </div>
+			    </div>
+         </body>
+</html>
+						
+<script type="text/javascript">
+
+ 
+ jQuery( document ).ready(function( $ ) {
+  
+  
+  $('#remarks').val('<%= vdranalysis.remarks %>');
+  
+  
+ if('<%=vdranalysis.status%>'== 'completed'){
+ 
+      $(':input[type="submit"]').prop('disabled', true);
+	  $('#btncancel').addClass('disabled');
+	  $('#edit12').addClass('disabled');
+      }
+  if('<%=vdranalysis.status%>' == 'cancelled'){
+ 
+      document.getElementById('btncancel').value="Active VDR";
+	  $('#edit12').addClass('disabled');
+	  $(':input[type="submit"]').prop('disabled', true);
+      }
+  
+  if('<%=vdranalysis.vdrtype%>'!=null)
+       {
+           
+		   if('<%=vdranalysis.vdrtype%>' == 'routineanalysis'){
+              document.getElementById('contactChoice1').checked=true;
+			 
+             }
+          else
+           {
+             document.getElementById('contactChoice2').checked=true;
+			
+             
+           }
+		     document.getElementById('contactChoice1').disabled=true;
+			 document.getElementById('contactChoice2').disabled=true;
+       }
+     var dt1 = '<%= vdranalysis.drcvclient %>';
+	 d1 = new Date(dt1);
+	 $('#drcvclient').val($.datepicker.formatDate('yy-mm-dd', d1));
+	 
+	 var dt2 = '<%= vdranalysis.alldocrcvd %>';
+	 d2 = new Date(dt2);
+	 $('#alldocrcvd').val($.datepicker.formatDate('yy-mm-dd', d2));
+	 
+	 var dt3 = '<%= vdranalysis.dtdatasent %>';
+	 d3 = new Date(dt3);
+	 $('#dtdatasent').val($.datepicker.formatDate('yy-mm-dd', d3));
+	 
+	 var dt4 = '<%= vdranalysis.dtanacomp %>';
+	 d4 = new Date(dt4);
+	 $('#dtanacomp').val($.datepicker.formatDate('yy-mm-dd', d4));
+	 
+	 var dt5 = '<%= vdranalysis.dtassign %>';
+	 d5 = new Date(dt5);
+	 $('#dtassign').val($.datepicker.formatDate('yy-mm-dd', d5));
+	 
+	 var dt6 = '<%= vdranalysis.dtdeliver %>';
+	 d6 = new Date(dt6);
+	 $('#dtdeliver').val($.datepicker.formatDate('yy-mm-dd', d6));
+	 
+	 var dt7 = '<%= vdranalysis.dtcomp %>';
+	 d7 = new Date(dt1);
+	 $('#dtcomp').val($.datepicker.formatDate('yy-mm-dd', d7));
+	
+	 var dt8 = '<%= vdranalysis.duedate %>';
+	 d8 = new Date(dt8);
+	 $('#duedate').val($.datepicker.formatDate('yy-mm-dd', d8));
+});
+
+$("#btncancel").click(function (event) {
+		 var check = confirm('Are you sure want to do this VDR?');
+			 if (check == true) {
+			 var itemid = '<%= vdranalysis._id%>';
+			   $.ajax({
+				type: "POST",
+				url: "/vdranalysiss/cancel/" + itemid,
+				data: {},
+				processData: false,
+				contentType: false,
+				cache: false,
+				timeout: 600000,
+				success: function(){
+				         window.location.href = "/vdranalysiss";
+						 },
+				error: function (e) {
+
+					   console.log("ERROR : ", e);
+				}
+			});
+			 
+			 }
+			 else{
+			   return false;
+			 }
+		});
+					
+</script>		
+<script src="/javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/chartist.min.js"></script>
+<script src="/javascripts/bootstrap-notify.js"></script>
+<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<script src="/javascripts/light-bootstrap-dashboard.js?v=1.4.0"></script>    			
